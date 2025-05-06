@@ -112,7 +112,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img 
-                src="/lovable-uploads/7a4769d7-643d-4a8f-84fa-4ed084f81d1f.png" 
+                src="lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png" 
                 alt="Fresh peach closeup" 
                 className="w-full h-64 object-cover"
               />
@@ -132,7 +132,7 @@ const Index = () => {
             
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img 
-                src="/lovable-uploads/7b44f342-65a3-47b7-b937-50b5ebb4b1bb.png" 
+                src="public/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png" 
                 alt="Fresh nectarines" 
                 className="w-full h-64 object-cover"
               />
@@ -152,7 +152,7 @@ const Index = () => {
             
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <img 
-                src="/lovable-uploads/972e2dff-cf65-4a68-9d46-7919f34e7fd5.png" 
+                src="public/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png" 
                 alt="Asian pears" 
                 className="w-full h-64 object-cover object-center"
               />

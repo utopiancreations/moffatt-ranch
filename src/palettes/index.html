@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palettes - Community Project</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #555;
+            text-align: center;
+        }
+
+        .palette {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+
+        .palette h3 {
+            margin-top: 0;
+            color: #666;
+        }
+
+        .color-swatches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .color-swatch {
+            flex: 1 1 calc(20% - 20px); /* Adjust as needed for number of colors */
+            min-width: 100px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            color: #fff; /* Default text color, adjust for readability */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-size: 0.9em;
+            word-break: break-all;
+            text-align: center;
+        }
+
+        .color-swatch span {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        /* Specific Palette Styles */
+        .palette-primary .color-swatch:nth-child(1) { background-color: #4682B4; color: #fff; } /* Deep Blue (approximated) */
+        .palette-primary .color-swatch:nth-child(2) { background-color: #FFFFFF; color: #333; text-shadow: none;} /* White */
+        .palette-primary .color-swatch:nth-child(3) { background-color: #FF7F50; } /* Peach/Orange (approximated) */
+        .palette-primary .color-swatch:nth-child(4) { background-color: #556B2F; } /* Green (approximated) */
+
+
+        .palette-1 .color-swatch:nth-child(1) { background-color: #228B22; } /* Forest Green */
+        .palette-1 .color-swatch:nth-child(2) { background-color: #F5F5DC; color: #333; text-shadow: none;} /* Warm Beige */
+        .palette-1 .color-swatch:nth-child(3) { background-color: #E2725B; } /* Terracotta */
+        .palette-1 .color-swatch:nth-child(4) { background-color: #FFD700; color: #333; text-shadow: none;} /* Soft Gold (Approximation of Chroma, Hue, Luminance) - Using a standard gold HEX for display */
+        .palette-1 .color-swatch:nth-child(5) { background-color: #36454F; } /* Charcoal */
+
+
+        .palette-2 .color-swatch:nth-child(1) { background-color: #8FBC8F; } /* Sea Moss Green */
+        .palette-2 .color-swatch:nth-child(2) { background-color: #F0F8FF; color: #333; text-shadow: none;} /* Cool White */
+        .palette-2 .color-swatch:nth-child(3) { background-color: #4682B4; } /* Dusky Blue */
+        .palette-2 .color-swatch:nth-child(4) { background-color: #FFDAB9; color: #333; text-shadow: none;} /* Light Peach */
+        .palette-2 .color-swatch:nth-child(5) { background-color: #778899; } /* Medium Gray */
+
+
+        .palette-3 .color-swatch:nth-child(1) { background-color: #90EE90; color: #333; text-shadow: none;} /* Bright Green */
+        .palette-3 .color-swatch:nth-child(2) { background-color: #FFFFFF; color: #333; text-shadow: none;} /* Minimalist White */
+        .palette-3 .color-swatch:nth-child(3) { background-color: #008080; } /* Teal */
+        .palette-3 .color-swatch:nth-child(4) { background-color: #FF7F50; } /* Coral */
+        .palette-3 .color-swatch:nth-child(5) { background-color: #A9A9A9; } /* Dark Grey */
+
+         /* Adjust text color for readability on lighter swatches */
+        .color-swatch[style*="#F5F5DC"],
+        .color-swatch[style*="#F0F8FF"],
+        .color-swatch[style*="#FFDAB9"],
+        .color-swatch[style*="#FFFFFF"],
+        .color-swatch[style*="#FFD700"],
+         .color-swatch[style*="#90EE90"] {
+            color: #333;
+            text-shadow: none;
+        }
+
+
+        @media (max-width: 600px) {
+            .color-swatch {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Color Palettes</h1>
+        <p>Exploring color schemes for the community website.</p>
+
+        <div class="palette palette-primary">
+            <h2>Primary Color Palette (from Logo)</h2>
+            <div class="color-swatches">
+                <div class="color-swatch" style="background-color: #4682B4;"><span>#4682B4</span></div> <div class="color-swatch" style="background-color: #FFFFFF; color: #333; text-shadow: none;"><span>#FFFFFF</span></div> <div class="color-swatch" style="background-color: #FF7F50;"><span>#FF7F50</span></div> <div class="color-swatch" style="background-color: #556B2F;"><span>#556B2F</span></div> </div>
+        </div>
+
+        <div class="palette palette-1">
+            <h2>Complimentary Palette 1: Earthy & Vibrant</h2>
+            <div class="color-swatches">
+                <div class="color-swatch" style="background-color: #228B22;"><span>#228B22</span></div> <div class="color-swatch" style="background-color: #F5F5DC; color: #333; text-shadow: none;"><span>#F5F5DC</span></div> <div class="color-swatch" style="background-color: #E2725B;"><span>#E2725B</span></div> <div class="color-swatch" style="background-color: #FFD700; color: #333; text-shadow: none;"><span>#FFD700</span></div> <div class="color-swatch" style="background-color: #36454F;"><span>#36454F</span></div> </div>
+        </div>
+
+        <div class="palette palette-2">
+            <h2>Complimentary Palette 2: Coastal & Serene (Sea Moss Green)</h2>
+            <div class="color-swatches">
+                <div class="color-swatch" style="background-color: #8FBC8F;"><span>#8FBC8F</span></div> <div class="color-swatch" style="background-color: #F0F8FF; color: #333; text-shadow: none;"><span>#F0F8FF</span></div> <div class="color-swatch" style="background-color: #4682B4;"><span>#4682B4</span></div> <div class="color-swatch" style="background-color: #FFDAB9; color: #333; text-shadow: none;"><span>#FFDAB9</span></div> <div class="color-swatch" style="background-color: #778899;"><span>#778899</span></div> </div>
+        </div>
+
+        <div class="palette palette-3">
+            <h2>Complimentary Palette 3: Fresh & Modern</h2>
+            <div class="color-swatches">
+                <div class="color-swatch" style="background-color: #90EE90; color: #333; text-shadow: none;"><span>#90EE90</span></div> <div class="color-swatch" style="background-color: #FFFFFF; color: #333; text-shadow: none;"><span>#FFFFFF</span></div> <div class="color-swatch" style="background-color: #008080;"><span>#008080</span></div> <div class="color-swatch" style="background-color: #FF7F50;"><span>#FF7F50</span></div> <div class="color-swatch" style="background-color: #A9A9A9;"><span>#A9A9A9</span></div> </div>
+        </div>
+    </div>
+
+</body>
+</html>
