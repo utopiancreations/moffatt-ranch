@@ -68,7 +68,7 @@ const Fruit = () => {
                   />
                 </div>
                 <div className="p-6 md:w-2/3">
-                  <h3 className="text-xl font-serif font-semibold mb-2">{fruit.name}</h3>
+                  <h3 className="text-xl font-cabin mb-2">{fruit.name}</h3>
                   <p className="text-gray-700 mb-3">{fruit.description}</p>
                   <p className="text-sm text-peach font-medium">
                     Season: {fruit.available_from} - {fruit.available_to}
@@ -85,7 +85,7 @@ const Fruit = () => {
   return (
     <div>
       <Hero
- backgroundVideo="https://firebasestorage.googleapis.com/v0/b/joshresumesite.firebasestorage.app/o/video_fx_undefined_2025_05_03_17_23.mp4?alt=media&token=e7978bb6-5840-48f9-80e3-63806c993f9b"
+        backgroundVideo="https://firebasestorage.googleapis.com/v0/b/joshresumesite.firebasestorage.app/o/video_fx_undefined_2025_05_03_17_23.mp4?alt=media&token=e7978bb6-5840-48f9-80e3-63806c993f9b"
         backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.png"
         title="Our Fruit"
         subtitle="Discover the variety of tree-ripened peaches, nectarines, and Asian pears at Moffatt Ranch"
@@ -136,7 +136,7 @@ const Fruit = () => {
           
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
             <div className="mb-8">
-              <h3 className="text-2xl font-serif font-semibold mb-4">When to Visit</h3>
+              <h3 className="text-2xl font-cabin mb-4">When to Visit</h3>
               <p className="mb-4">
                 Our U-Pick season typically runs from early June through August, depending on weather conditions and fruit ripening schedules.
               </p>
@@ -147,19 +147,19 @@ const Fruit = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
-                <h4 className="text-xl font-serif font-medium mb-3 text-peach-light">Early Season</h4>
+                <h4 className="text-xl font-cabin mb-3 text-peach-light">Early Season</h4>
                 <p className="font-medium">June - Early July</p>
                 <p className="text-sm mt-2">Early peach and nectarine varieties</p>
               </div>
               
               <div>
-                <h4 className="text-xl font-serif font-medium mb-3 text-peach-light">Mid Season</h4>
+                <h4 className="text-xl font-cabin mb-3 text-peach-light">Mid Season</h4>
                 <p className="font-medium">Mid July</p>
                 <p className="text-sm mt-2">Peak varieties of peaches and nectarines</p>
               </div>
               
               <div>
-                <h4 className="text-xl font-serif font-medium mb-3 text-peach-light">Late Season</h4>
+                <h4 className="text-xl font-cabin mb-3 text-peach-light">Late Season</h4>
                 <p className="font-medium">Late July - August</p>
                 <p className="text-sm mt-2">Late peaches, nectarines, and Asian pears</p>
               </div>
