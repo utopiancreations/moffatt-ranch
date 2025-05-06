@@ -106,7 +106,7 @@ export default {
 			fontFamily: {
 				serif: ['Playfair Display', 'serif'],
 				sans: ['Cabin', 'sans-serif'],
-				urbandale: ['Urbandale', 'sans-serif']
+				cabin: ['Cabin', 'sans-serif']
 			}
 		}
 	},
