@@ -9,7 +9,8 @@ import {
   Tag as TagIcon,
   Settings as SettingsIcon,
   LayoutDashboard as DashboardIcon,
-  LogOut as LogOutIcon
+  LogOut as LogOutIcon,
+  CreditCard as CreditCardIcon
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -38,7 +39,7 @@ const AdminSidebar = () => {
   return (
     <div className="hidden md:flex flex-col w-64 bg-white border-r shadow-sm">
       <div className="p-6 border-b">
-        <h2 className="text-xl font-serif font-bold text-ranch-dark">Admin Panel</h2>
+        <h2 className="text-xl font-cabin font-bold text-ranch-dark">Admin Panel</h2>
       </div>
       <nav className="flex-1 p-4">
         <ul className="space-y-2">
@@ -103,6 +104,22 @@ const AdminSidebar = () => {
             >
               <TagIcon className="mr-3 h-5 w-5" />
               Products
+            </NavLink>
+          </li>
+          
+          <li>
+            <NavLink
+              to="/admin/stripe"
+              className={({ isActive }) =>
+                `flex items-center px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${
+                  isActive
+                    ? "bg-peach/10 text-peach"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`
+              }
+            >
+              <CreditCardIcon className="mr-3 h-5 w-5" />
+              Stripe Setup
             </NavLink>
           </li>
           
