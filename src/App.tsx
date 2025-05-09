@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -41,11 +40,11 @@ const App = () => {
   return (
     <SessionContextProvider supabaseClient={supabase}>
       <QueryClientProvider client={queryClient}>
-        <CartProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
+        <BrowserRouter>
+          <CartProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
               <Routes>
                 {/* Admin Routes */}
                 <Route path="/admin/login" element={<Login />} />
@@ -162,9 +161,9 @@ const App = () => {
                   </div>
                 } />
               </Routes>
-            </BrowserRouter>
-          </TooltipProvider>
-        </CartProvider>
+            </TooltipProvider>
+          </CartProvider>
+        </BrowserRouter>
       </QueryClientProvider>
     </SessionContextProvider>
   );
