@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { ShoppingBag, Plus, Minus } from "lucide-react";
 import { useCart } from "@/hooks/useCart";
 
+// Define proper types based on the database schema
 type ProductVariant = {
   id: string;
   product_id: string;
@@ -63,6 +64,8 @@ const Merchandise = () => {
       
       // Fetch variants for these products
       const productIds = productData.map(p => p.id);
+      
+      // Type-safe query for product_variants
       const { data: variantData, error: variantError } = await supabase
         .from("product_variants")
         .select("*")
@@ -73,7 +76,10 @@ const Merchandise = () => {
       
       // Combine products with their variants
       const productsWithVariants = productData.map(product => {
-        const variants = variantData?.filter(v => v.product_id === product.id) || [];
+        // Filter variants for this specific product
+        const variants = (variantData || []).filter(
+          (v: any) => v.product_id === product.id
+        );
         
         // Initialize with the first available size if any
         if (variants.length > 0) {
@@ -89,10 +95,11 @@ const Merchandise = () => {
           }));
         }
         
+        // Return properly typed product with its variants
         return {
           ...product,
-          variants
-        };
+          variants: variants || []
+        } as Product;
       });
       
       // Only show products that have at least one variant with stock
