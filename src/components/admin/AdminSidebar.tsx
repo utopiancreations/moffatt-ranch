@@ -10,7 +10,8 @@ import {
   Settings as SettingsIcon,
   LayoutDashboard as DashboardIcon,
   LogOut as LogOutIcon,
-  CreditCard as CreditCardIcon
+  CreditCard as CreditCardIcon,
+  Package as PackageIcon
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -56,6 +57,22 @@ const AdminSidebar = () => {
             >
               <DashboardIcon className="mr-3 h-5 w-5" />
               Dashboard
+            </NavLink>
+          </li>
+          
+          <li>
+            <NavLink
+              to="/admin/orders"
+              className={({ isActive }) =>
+                `flex items-center px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${
+                  isActive
+                    ? "bg-peach/10 text-peach"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`
+              }
+            >
+              <PackageIcon className="mr-3 h-5 w-5" />
+              Orders
             </NavLink>
           </li>
           

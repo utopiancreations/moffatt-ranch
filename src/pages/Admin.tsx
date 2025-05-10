@@ -11,6 +11,7 @@ const Admin = () => {
   const navigate = useNavigate();
   const supabase = useSupabaseClient();
   const [isLoading, setIsLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
   
   useEffect(() => {
     // Check if Supabase is properly initialized
@@ -35,7 +36,30 @@ const Admin = () => {
         
         if (!data.session) {
           navigate("/admin/login");
+          return;
         }
+
+        // Check if the user is an admin
+        const { data: adminData, error: adminError } = await supabase
+          .from("admin_users")
+          .select("user_id")
+          .eq("user_id", data.session.user.id)
+          .maybeSingle();
+
+        if (adminError) {
+          console.error("Admin check error:", adminError);
+          toast.error("Failed to verify admin permissions.");
+          navigate("/admin/login");
+          return;
+        }
+
+        if (!adminData) {
+          toast.error("You don't have admin permissions.");
+          navigate("/");
+          return;
+        }
+
+        setIsAdmin(true);
         
       } catch (error) {
         console.error("Auth check failed:", error);
@@ -56,8 +80,8 @@ const Admin = () => {
     </div>
   );
 
-  // If no user, don't render admin content
-  if (!user) return null;
+  // If no user or not an admin, don't render admin content
+  if (!user || !isAdmin) return null;
 
   return (
     <div className="flex min-h-screen bg-slate-50">

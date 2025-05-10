@@ -9,6 +9,24 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       content: {
         Row: {
           content: string
@@ -78,6 +96,111 @@ export type Database = {
           name?: string
           type?: Database["public"]["Enums"]["fruit_type"]
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      order_items: {
+        Row: {
+          created_at: string
+          id: string
+          order_id: string
+          price: string
+          product_id: string | null
+          product_name: string
+          product_size: string
+          quantity: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_id: string
+          price: string
+          product_id?: string | null
+          product_name: string
+          product_size: string
+          quantity?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_id?: string
+          price?: string
+          product_id?: string | null
+          product_name?: string
+          product_size?: string
+          quantity?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_items_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          amount: number
+          billing_address: Json | null
+          created_at: string
+          email: string
+          id: string
+          notes: string | null
+          refund_amount: number | null
+          refund_reason: string | null
+          shipping_address: Json
+          status: string
+          stripe_session_id: string | null
+          tracking_number: string | null
+          tracking_url: string | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          amount: number
+          billing_address?: Json | null
+          created_at?: string
+          email: string
+          id?: string
+          notes?: string | null
+          refund_amount?: number | null
+          refund_reason?: string | null
+          shipping_address: Json
+          status?: string
+          stripe_session_id?: string | null
+          tracking_number?: string | null
+          tracking_url?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          amount?: number
+          billing_address?: Json | null
+          created_at?: string
+          email?: string
+          id?: string
+          notes?: string | null
+          refund_amount?: number | null
+          refund_reason?: string | null
+          shipping_address?: Json
+          status?: string
+          stripe_session_id?: string | null
+          tracking_number?: string | null
+          tracking_url?: string | null
+          updated_at?: string
+          user_id?: string | null
         }
         Relationships: []
       }
@@ -194,6 +317,27 @@ export type Database = {
           season_end?: string
           season_start?: string
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      stripe_config: {
+        Row: {
+          created_at: string
+          id: string
+          publishable_key: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          publishable_key: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          publishable_key?: string
+          updated_at?: string
         }
         Relationships: []
       }

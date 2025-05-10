@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -30,6 +31,7 @@ import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
 import ContentManager from "./pages/admin/ContentManager";
 import ProductManager from "./pages/admin/ProductManager";
+import OrderManager from "./pages/admin/OrderManager";
 import StripeConfig from "./components/admin/StripeConfig";
 import SettingsManager from "./pages/admin/SettingsManager";
 import FruitManager from "./pages/admin/FruitManager";
@@ -51,6 +53,7 @@ const App = () => {
                 <Route path="/admin" element={<Admin />}>
                   <Route index element={<Dashboard />} />
                   <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="orders" element={<OrderManager />} />
                   <Route path="content" element={<ContentManager />} />
                   <Route path="fruit" element={<FruitManager />} />
                   <Route path="products" element={<ProductManager />} />
