@@ -41,12 +41,12 @@ const Admin = () => {
 
         console.log("User authenticated:", data.session.user.id);
 
-        // Check if the user is an admin
-        // Using a simpler query approach that doesn't trigger RLS infinite recursion
-        const { data: adminData, error: adminError } = await supabase
-          .from("admin_users")
-          .select("*")
-          .eq("user_id", data.session.user.id);
+        // Use a direct SQL query with service role to bypass RLS policies
+        // This is a safer approach to prevent infinite recursion with RLS policies
+        const { data: adminData, error: adminError } = await supabase.rpc(
+          'is_user_admin',
+          { user_id_param: data.session.user.id }
+        );
 
         console.log("Admin check response:", { adminData, adminError });
 
@@ -57,8 +57,8 @@ const Admin = () => {
           return;
         }
 
-        // Check if we got any results
-        if (!adminData || adminData.length === 0) {
+        // Check the result of the function call
+        if (!adminData) {
           toast.error("You don't have admin permissions.");
           navigate("/");
           return;
