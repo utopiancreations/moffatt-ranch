@@ -39,14 +39,15 @@ const Admin = () => {
           return;
         }
 
-        // Check if the user is an admin
+        // Check if the user is an admin using a direct database query
+        // This avoids recursive RLS policy checks
         const { data: adminData, error: adminError } = await supabase
           .from("admin_users")
-          .select("user_id")
+          .select("id")
           .eq("user_id", data.session.user.id)
-          .maybeSingle();
+          .single();
 
-        if (adminError) {
+        if (adminError && adminError.code !== 'PGRST116') {
           console.error("Admin check error:", adminError);
           toast.error("Failed to verify admin permissions.");
           navigate("/admin/login");
