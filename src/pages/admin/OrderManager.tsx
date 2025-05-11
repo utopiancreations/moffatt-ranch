@@ -1,9 +1,7 @@
-
 import { useState, useEffect } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { toast } from "sonner";
-import { format } from "date-fns";
-import { Search } from "lucide-react";
+import { Search, Package, ShoppingBag, Inbox } from "lucide-react";
 import { 
   Table, 
   TableHeader, 
@@ -16,7 +14,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { 
   Pagination, 
   PaginationContent, 
@@ -27,6 +24,7 @@ import {
 } from "@/components/ui/pagination";
 import { formatCurrency } from "@/lib/utils";
 import OrderDetails from "@/components/admin/OrderDetails";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const OrderStatusBadge = ({ status }: { status: string }) => {
   let color = "";
@@ -64,6 +62,100 @@ const OrderStatusBadge = ({ status }: { status: string }) => {
   );
 };
 
+const EmptyOrdersState = ({ isFiltering }: { isFiltering: boolean }) => (
+  <div className="flex flex-col items-center justify-center py-12 text-center">
+    <div className="bg-muted rounded-full p-3 mb-4">
+      {isFiltering ? (
+        <Search className="h-8 w-8 text-muted-foreground" />
+      ) : (
+        <ShoppingBag className="h-8 w-8 text-muted-foreground" />
+      )}
+    </div>
+    <h3 className="text-lg font-medium mb-2">
+      {isFiltering ? "No matching orders found" : "No orders yet"}
+    </h3>
+    <p className="text-sm text-muted-foreground max-w-md mb-6">
+      {isFiltering 
+        ? "Try adjusting your search filters or clearing them to see all orders." 
+        : "Orders will appear here once customers make purchases. Your online store is ready to receive orders."}
+    </p>
+    {isFiltering && (
+      <Button variant="outline" size="sm" className="mt-2">
+        Clear Filters
+      </Button>
+    )}
+  </div>
+);
+
+const OrdersTable = ({ 
+  orders, 
+  loading, 
+  isFiltering, 
+  handleOrderClick 
+}: { 
+  orders: any[], 
+  loading: boolean, 
+  isFiltering: boolean,
+  handleOrderClick: (id: string) => void 
+}) => {
+  if (loading) {
+    return (
+      <div className="flex justify-center py-12">
+        <div className="flex flex-col items-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-peach mb-4"></div>
+          <p className="text-muted-foreground">Loading orders...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (orders.length === 0) {
+    return <EmptyOrdersState isFiltering={isFiltering} />;
+  }
+
+  return (
+    <div className="rounded-md border">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Order ID</TableHead>
+            <TableHead>Date</TableHead>
+            <TableHead>Customer</TableHead>
+            <TableHead>Amount</TableHead>
+            <TableHead>Status</TableHead>
+            <TableHead className="text-right">Action</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {orders.map((order) => (
+            <TableRow key={order.id} className="cursor-pointer hover:bg-muted/50" onClick={() => handleOrderClick(order.id)}>
+              <TableCell className="font-medium">{order.id.substring(0, 8).toUpperCase()}</TableCell>
+              <TableCell>{new Date(order.created_at).toLocaleDateString()}</TableCell>
+              <TableCell>{order.email}</TableCell>
+              <TableCell>{formatCurrency(order.amount / 100)}</TableCell>
+              <TableCell>
+                <OrderStatusBadge status={order.status} />
+              </TableCell>
+              <TableCell className="text-right">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOrderClick(order.id);
+                  }}
+                >
+                  View Details
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  );
+};
+
 const OrderManager = () => {
   const supabase = useSupabaseClient();
   const [orders, setOrders] = useState<any[]>([]);
@@ -97,18 +189,22 @@ const OrderManager = () => {
         .order("created_at", { ascending: false })
         .range(startIndex, startIndex + ordersPerPage - 1);
       
+      console.log("Orders query result:", { data, error, count });
+      
       if (error) throw error;
       
       setOrders(data || []);
       
       if (count !== null) {
         setTotalPages(Math.ceil(count / ordersPerPage));
+      } else {
+        setTotalPages(1);
       }
     } catch (error: any) {
+      console.error("Error loading orders:", error);
       toast.error("Failed to load orders", {
         description: error.message
       });
-      console.error("Error loading orders:", error);
     } finally {
       setLoading(false);
     }
@@ -116,7 +212,7 @@ const OrderManager = () => {
 
   useEffect(() => {
     fetchOrders();
-  }, [currentPage, statusFilter, searchTerm]);
+  }, [currentPage, statusFilter]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -127,6 +223,13 @@ const OrderManager = () => {
   const handleStatusFilterChange = (value: string) => {
     setStatusFilter(value);
     setCurrentPage(1);
+  };
+
+  const handleClearFilters = () => {
+    setSearchTerm("");
+    setStatusFilter("");
+    setCurrentPage(1);
+    fetchOrders();
   };
 
   const handlePageChange = (page: number) => {
@@ -141,6 +244,9 @@ const OrderManager = () => {
     fetchOrders();
     setSelectedOrder(null);
   };
+
+  // Determine if any filters are active
+  const isFiltering = !!searchTerm || !!statusFilter;
 
   // Generate pagination
   const paginationItems = [];
@@ -215,70 +321,24 @@ const OrderManager = () => {
               
               <Button 
                 variant="outline" 
-                onClick={() => {
-                  setSearchTerm("");
-                  setStatusFilter("");
-                  setCurrentPage(1);
-                }}
+                onClick={handleClearFilters}
+                disabled={!isFiltering}
               >
                 Reset
               </Button>
             </div>
           </div>
           
-          <div className="rounded-md border">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Order ID</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Customer</TableHead>
-                  <TableHead>Amount</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead className="text-right">Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {loading ? (
-                  <TableRow>
-                    <TableCell colSpan={6} className="h-24 text-center">
-                      Loading orders...
-                    </TableCell>
-                  </TableRow>
-                ) : orders.length === 0 ? (
-                  <TableRow>
-                    <TableCell colSpan={6} className="h-24 text-center">
-                      No orders found
-                    </TableCell>
-                  </TableRow>
-                ) : (
-                  orders.map((order) => (
-                    <TableRow key={order.id} className="cursor-pointer hover:bg-muted/50" onClick={() => handleOrderClick(order.id)}>
-                      <TableCell className="font-medium">{order.id.substring(0, 8)}</TableCell>
-                      <TableCell>{format(new Date(order.created_at), 'MMM dd, yyyy')}</TableCell>
-                      <TableCell>{order.email}</TableCell>
-                      <TableCell>{formatCurrency(order.amount / 100)}</TableCell>
-                      <TableCell>
-                        <OrderStatusBadge status={order.status} />
-                      </TableCell>
-                      <TableCell className="text-right">
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleOrderClick(order.id);
-                          }}
-                        >
-                          View Details
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  ))
-                )}
-              </TableBody>
-            </Table>
-          </div>
+          <Card className="border-dashed bg-white">
+            <CardContent className="p-0">
+              <OrdersTable 
+                orders={orders} 
+                loading={loading} 
+                isFiltering={isFiltering}
+                handleOrderClick={handleOrderClick} 
+              />
+            </CardContent>
+          </Card>
           
           {totalPages > 1 && (
             <Pagination className="mt-4">
@@ -300,6 +360,57 @@ const OrderManager = () => {
             </Pagination>
           )}
         </>
+      )}
+      
+      {/* Let's also add a helpful card to guide users when there are no orders */}
+      {!loading && orders.length === 0 && !selectedOrder && (
+        <Card className="mt-8 border-dashed">
+          <CardHeader>
+            <CardTitle>Getting Started with Orders</CardTitle>
+            <CardDescription>
+              Here are some tips to help you prepare for your first orders
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <div className="bg-peach/10 p-2 rounded-full mr-3">
+                  <Package className="h-5 w-5 text-peach" />
+                </div>
+                <div>
+                  <h3 className="text-base font-medium">Add Products</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Make sure you have products available in your store with inventory set up.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-peach/10 p-2 rounded-full mr-3">
+                  <Inbox className="h-5 w-5 text-peach" />
+                </div>
+                <div>
+                  <h3 className="text-base font-medium">Set Up Stripe</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Verify your Stripe integration is working correctly to process payments.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-peach/10 p-2 rounded-full mr-3">
+                  <ShoppingBag className="h-5 w-5 text-peach" />
+                </div>
+                <div>
+                  <h3 className="text-base font-medium">Test Your Checkout</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Place a test order yourself to make sure the customer experience is smooth.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       )}
     </div>
   );
