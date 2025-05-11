@@ -15,8 +15,12 @@ type HeroProps = {
   useUrbandale?: boolean;
 };
 
+<<<<<<< HEAD
+// In the Hero component, modify the video implementation
+=======
 
 // Updated Hero.tsx component with smaller image size
+>>>>>>> e82a92250917466d021485e398ec57f2ca7bfd9c
 const Hero = ({
   backgroundImage,
   backgroundVideo,
@@ -29,12 +33,23 @@ const Hero = ({
   imageOverlay,
   useUrbandale = false
 }: HeroProps) => {
+  // Add a useEffect to handle video loading
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    // Attempt to load the video when the component mounts
+    if (videoRef.current && backgroundVideo) {
+      videoRef.current.load();
+    }
+  }, [backgroundVideo]);
+
   return (
     <div 
       className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden"
     >
       {backgroundVideo ? (
         <video 
+          ref={videoRef}
           className="absolute w-full h-full object-cover"
           autoPlay 
           muted 
@@ -43,6 +58,7 @@ const Hero = ({
           preload="auto"
         >
           <source src={backgroundVideo} type="video/mp4" />
+          {/* Fallback image if video fails to load */}
           {backgroundImage && <img src={backgroundImage} alt="Fallback" className="w-full h-full object-cover" />}
         </video>
       ) : backgroundImage && (
