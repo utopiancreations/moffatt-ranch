@@ -1,14 +1,12 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ShoppingBag } from "lucide-react";
-import { useCart } from "@/hooks/useCart";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
-  const { cartItemCount } = useCart();
   const location = useLocation();
 
   // Monitor window scroll position
@@ -59,14 +57,6 @@ const Navbar = () => {
         {isMobile && (
           <>
             <div className="flex items-center">
-              <Link to="/cart" className="mr-6 relative">
-                <ShoppingBag className="h-6 w-6 text-ranch-dark" />
-                {cartItemCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-peach text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                    {cartItemCount > 9 ? '9+' : cartItemCount}
-                  </span>
-                )}
-              </Link>
               <button
                 className="text-ranch-dark"
                 onClick={toggleMenu}
@@ -150,38 +140,6 @@ const Navbar = () => {
                         </Link>
                       </li>
                     ))}
-                    <li>
-                      <Link
-                        to="/cart"
-                        className={`block py-2 flex items-center ${
-                          location.pathname === "/cart"
-                            ? "text-peach font-medium"
-                            : "text-gray-800 hover:text-peach"
-                        }`}
-                        onClick={closeMenu}
-                      >
-                        <ShoppingBag className="h-5 w-5 mr-2" />
-                        Cart
-                        {cartItemCount > 0 && (
-                          <span className="ml-2 bg-peach text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                            {cartItemCount > 9 ? '9+' : cartItemCount}
-                          </span>
-                        )}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/order-tracking"
-                        className={`block py-2 ${
-                          location.pathname === "/order-tracking"
-                            ? "text-peach font-medium"
-                            : "text-gray-800 hover:text-peach"
-                        }`}
-                        onClick={closeMenu}
-                      >
-                        Track Order
-                      </Link>
-                    </li>
                   </ul>
                 </nav>
               </div>
@@ -208,28 +166,8 @@ const Navbar = () => {
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link
-                    to="/order-tracking"
-                    className={`nav-link ${
-                      location.pathname === "/order-tracking"
-                        ? "text-peach font-medium"
-                        : "text-ranch-dark hover:text-peach"
-                    }`}
-                  >
-                    Track Order
-                  </Link>
-                </li>
               </ul>
             </nav>
-            <Link to="/cart" className="ml-8 relative">
-              <ShoppingBag className="h-6 w-6 text-ranch-dark hover:text-peach transition-colors" />
-              {cartItemCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-peach text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                  {cartItemCount > 9 ? '9+' : cartItemCount}
-                </span>
-              )}
-            </Link>
           </div>
         )}
       </div>
