@@ -1,5 +1,5 @@
 
-import { ReactNode } from "react";
+import { ReactNode, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 type HeroProps = {
@@ -15,12 +15,7 @@ type HeroProps = {
   useUrbandale?: boolean;
 };
 
-<<<<<<< HEAD
-// In the Hero component, modify the video implementation
-=======
-
-// Updated Hero.tsx component with smaller image size
->>>>>>> e82a92250917466d021485e398ec57f2ca7bfd9c
+// Updated Hero component with video implementation and smaller image size
 const Hero = ({
   backgroundImage,
   backgroundVideo,
@@ -33,10 +28,10 @@ const Hero = ({
   imageOverlay,
   useUrbandale = false
 }: HeroProps) => {
-  // Add a useEffect to handle video loading
-  const videoRef = React.useRef<HTMLVideoElement>(null);
+  // Use useRef to handle video loading
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Attempt to load the video when the component mounts
     if (videoRef.current && backgroundVideo) {
       videoRef.current.load();
@@ -113,4 +108,5 @@ const Hero = ({
     </div>
   );
 };
+
 export default Hero;
