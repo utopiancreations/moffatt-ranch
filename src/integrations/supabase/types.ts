@@ -13,16 +13,19 @@ export type Database = {
         Row: {
           created_at: string
           id: string
+          is_super_admin: boolean | null
           user_id: string
         }
         Insert: {
           created_at?: string
           id?: string
+          is_super_admin?: boolean | null
           user_id: string
         }
         Update: {
           created_at?: string
           id?: string
+          is_super_admin?: boolean | null
           user_id?: string
         }
         Relationships: []
@@ -155,14 +158,20 @@ export type Database = {
           amount: number
           billing_address: Json | null
           created_at: string
+          delivered_at: string | null
           email: string
           id: string
           notes: string | null
+          payment_status: string | null
           refund_amount: number | null
           refund_reason: string | null
+          shipped_at: string | null
           shipping_address: Json
+          shipping_notes: string | null
           status: string
+          stripe_payment_id: string | null
           stripe_session_id: string | null
+          tracking_carrier: string | null
           tracking_number: string | null
           tracking_url: string | null
           updated_at: string
@@ -172,14 +181,20 @@ export type Database = {
           amount: number
           billing_address?: Json | null
           created_at?: string
+          delivered_at?: string | null
           email: string
           id?: string
           notes?: string | null
+          payment_status?: string | null
           refund_amount?: number | null
           refund_reason?: string | null
+          shipped_at?: string | null
           shipping_address: Json
+          shipping_notes?: string | null
           status?: string
+          stripe_payment_id?: string | null
           stripe_session_id?: string | null
+          tracking_carrier?: string | null
           tracking_number?: string | null
           tracking_url?: string | null
           updated_at?: string
@@ -189,14 +204,20 @@ export type Database = {
           amount?: number
           billing_address?: Json | null
           created_at?: string
+          delivered_at?: string | null
           email?: string
           id?: string
           notes?: string | null
+          payment_status?: string | null
           refund_amount?: number | null
           refund_reason?: string | null
+          shipped_at?: string | null
           shipping_address?: Json
+          shipping_notes?: string | null
           status?: string
+          stripe_payment_id?: string | null
           stripe_session_id?: string | null
+          tracking_carrier?: string | null
           tracking_number?: string | null
           tracking_url?: string | null
           updated_at?: string
@@ -326,18 +347,21 @@ export type Database = {
           id: string
           publishable_key: string
           updated_at: string
+          webhook_secret: string | null
         }
         Insert: {
           created_at?: string
           id?: string
           publishable_key: string
           updated_at?: string
+          webhook_secret?: string | null
         }
         Update: {
           created_at?: string
           id?: string
           publishable_key?: string
           updated_at?: string
+          webhook_secret?: string | null
         }
         Relationships: []
       }
@@ -346,7 +370,18 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      check_admin_status: {
+        Args: { user_uuid: string }
+        Returns: boolean
+      }
+      is_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
+      is_user_admin: {
+        Args: { user_id_param: string }
+        Returns: boolean
+      }
     }
     Enums: {
       fruit_type:

@@ -1,7 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { toast } from "sonner";
-import { Search, Package, ShoppingBag, Inbox } from "lucide-react";
+import { Plus, Package, Search } from "lucide-react";
 import { 
   Table, 
   TableHeader, 
@@ -12,197 +13,57 @@ import {
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Pagination, 
-  PaginationContent, 
-  PaginationItem, 
-  PaginationLink, 
-  PaginationNext, 
-  PaginationPrevious 
-} from "@/components/ui/pagination";
-import { formatCurrency } from "@/lib/utils";
-import OrderDetails from "@/components/admin/OrderDetails";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { ImageUploader } from "@/components/admin/ImageUploader";
 
-const OrderStatusBadge = ({ status }: { status: string }) => {
-  let color = "";
-  
-  switch(status) {
-    case "pending":
-      color = "bg-yellow-100 text-yellow-800 border-yellow-200";
-      break;
-    case "paid":
-      color = "bg-blue-100 text-blue-800 border-blue-200";
-      break;
-    case "processing":
-      color = "bg-purple-100 text-purple-800 border-purple-200";
-      break;
-    case "shipped":
-      color = "bg-indigo-100 text-indigo-800 border-indigo-200";
-      break;
-    case "delivered":
-      color = "bg-green-100 text-green-800 border-green-200";
-      break;
-    case "cancelled":
-      color = "bg-gray-100 text-gray-800 border-gray-200";
-      break;
-    case "refunded":
-      color = "bg-red-100 text-red-800 border-red-200";
-      break;
-    default:
-      color = "bg-gray-100 text-gray-800 border-gray-200";
-  }
-  
-  return (
-    <Badge className={`font-medium ${color}`} variant="outline">
-      {status.charAt(0).toUpperCase() + status.slice(1)}
-    </Badge>
-  );
-};
-
-const EmptyOrdersState = ({ isFiltering }: { isFiltering: boolean }) => (
-  <div className="flex flex-col items-center justify-center py-12 text-center">
-    <div className="bg-muted rounded-full p-3 mb-4">
-      {isFiltering ? (
-        <Search className="h-8 w-8 text-muted-foreground" />
-      ) : (
-        <ShoppingBag className="h-8 w-8 text-muted-foreground" />
-      )}
-    </div>
-    <h3 className="text-lg font-medium mb-2">
-      {isFiltering ? "No matching orders found" : "No orders yet"}
-    </h3>
-    <p className="text-sm text-muted-foreground max-w-md mb-6">
-      {isFiltering 
-        ? "Try adjusting your search filters or clearing them to see all orders." 
-        : "Orders will appear here once customers make purchases. Your online store is ready to receive orders."}
-    </p>
-    {isFiltering && (
-      <Button variant="outline" size="sm" className="mt-2">
-        Clear Filters
-      </Button>
-    )}
-  </div>
-);
-
-const OrdersTable = ({ 
-  orders, 
-  loading, 
-  isFiltering, 
-  handleOrderClick 
-}: { 
-  orders: any[], 
-  loading: boolean, 
-  isFiltering: boolean,
-  handleOrderClick: (id: string) => void 
-}) => {
-  if (loading) {
-    return (
-      <div className="flex justify-center py-12">
-        <div className="flex flex-col items-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-peach mb-4"></div>
-          <p className="text-muted-foreground">Loading orders...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (orders.length === 0) {
-    return <EmptyOrdersState isFiltering={isFiltering} />;
-  }
-
-  return (
-    <div className="rounded-md border">
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>Order ID</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead>Customer</TableHead>
-            <TableHead>Amount</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead className="text-right">Action</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {orders.map((order) => (
-            <TableRow key={order.id} className="cursor-pointer hover:bg-muted/50" onClick={() => handleOrderClick(order.id)}>
-              <TableCell className="font-medium">{order.id.substring(0, 8).toUpperCase()}</TableCell>
-              <TableCell>{new Date(order.created_at).toLocaleDateString()}</TableCell>
-              <TableCell>{order.email}</TableCell>
-              <TableCell>{formatCurrency(order.amount / 100)}</TableCell>
-              <TableCell>
-                <OrderStatusBadge status={order.status} />
-              </TableCell>
-              <TableCell className="text-right">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleOrderClick(order.id);
-                  }}
-                >
-                  View Details
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
-  );
-};
-
-const OrderManager = () => {
+const ProductListing = () => {
   const supabase = useSupabaseClient();
-  const [orders, setOrders] = useState<any[]>([]);
+  const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const [statusFilter, setStatusFilter] = useState<string>("");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [selectedOrder, setSelectedOrder] = useState<string | null>(null);
-  const ordersPerPage = 10;
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [newProduct, setNewProduct] = useState({
+    name: "",
+    description: "",
+    price: "",
+    image_url: "",
+    category: "merchandise",
+    in_stock: true
+  });
 
-  const fetchOrders = async () => {
+  const fetchProducts = async () => {
     try {
       setLoading(true);
       
       let query = supabase
-        .from("orders")
-        .select("*", { count: "exact" });
+        .from("products")
+        .select("*");
       
       if (searchTerm) {
-        query = query.or(`email.ilike.%${searchTerm}%,id.ilike.%${searchTerm}%`);
+        query = query.ilike("name", `%${searchTerm}%`);
       }
       
-      if (statusFilter) {
-        query = query.eq("status", statusFilter);
-      }
-      
-      const startIndex = (currentPage - 1) * ordersPerPage;
-      
-      const { data, error, count } = await query
-        .order("created_at", { ascending: false })
-        .range(startIndex, startIndex + ordersPerPage - 1);
-      
-      console.log("Orders query result:", { data, error, count });
+      const { data, error } = await query.order("name");
       
       if (error) throw error;
       
-      setOrders(data || []);
-      
-      if (count !== null) {
-        setTotalPages(Math.ceil(count / ordersPerPage));
-      } else {
-        setTotalPages(1);
-      }
+      setProducts(data || []);
     } catch (error: any) {
-      console.error("Error loading orders:", error);
-      toast.error("Failed to load orders", {
+      console.error("Error loading products:", error);
+      toast.error("Failed to load products", {
         description: error.message
       });
     } finally {
@@ -211,209 +72,292 @@ const OrderManager = () => {
   };
 
   useEffect(() => {
-    fetchOrders();
-  }, [currentPage, statusFilter]);
+    fetchProducts();
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    setCurrentPage(1);
-    fetchOrders();
+    fetchProducts();
   };
 
-  const handleStatusFilterChange = (value: string) => {
-    setStatusFilter(value);
-    setCurrentPage(1);
+  const handleInputChange = (field: string, value: string | boolean) => {
+    setNewProduct(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleClearFilters = () => {
-    setSearchTerm("");
-    setStatusFilter("");
-    setCurrentPage(1);
-    fetchOrders();
+  const handleImageUploaded = (url: string) => {
+    setNewProduct(prev => ({ ...prev, image_url: url }));
   };
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+  const handleAddProduct = async () => {
+    try {
+      if (!newProduct.name || !newProduct.price) {
+        toast.error("Product name and price are required");
+        return;
+      }
+      
+      const { error } = await supabase
+        .from("products")
+        .insert([{
+          name: newProduct.name,
+          description: newProduct.description,
+          price: newProduct.price,
+          image_url: newProduct.image_url,
+          category: newProduct.category,
+          in_stock: newProduct.in_stock
+        }]);
+        
+      if (error) throw error;
+      
+      toast.success("Product added successfully");
+      setNewProduct({
+        name: "",
+        description: "",
+        price: "",
+        image_url: "",
+        category: "merchandise",
+        in_stock: true
+      });
+      setDialogOpen(false);
+      fetchProducts();
+      
+    } catch (error: any) {
+      toast.error("Failed to add product", {
+        description: error.message
+      });
+    }
   };
 
-  const handleOrderClick = (orderId: string) => {
-    setSelectedOrder(orderId);
+  const handleDeleteProduct = async (id: string) => {
+    try {
+      const { error } = await supabase
+        .from("products")
+        .delete()
+        .eq("id", id);
+        
+      if (error) throw error;
+      
+      toast.success("Product deleted successfully");
+      fetchProducts();
+    } catch (error: any) {
+      toast.error("Failed to delete product", {
+        description: error.message
+      });
+    }
   };
-
-  const handleOrderUpdate = () => {
-    fetchOrders();
-    setSelectedOrder(null);
-  };
-
-  // Determine if any filters are active
-  const isFiltering = !!searchTerm || !!statusFilter;
-
-  // Generate pagination
-  const paginationItems = [];
-  for (let i = 1; i <= totalPages; i++) {
-    paginationItems.push(
-      <PaginationItem key={i}>
-        <PaginationLink 
-          isActive={currentPage === i} 
-          onClick={() => handlePageChange(i)}
-        >
-          {i}
-        </PaginationLink>
-      </PaginationItem>
-    );
-  }
 
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-xl font-serif font-semibold text-ranch-dark">Order Management</h2>
-        <p className="text-gray-500">View and manage customer orders</p>
+        <h2 className="text-xl font-serif font-semibold text-ranch-dark">Product Management</h2>
+        <p className="text-gray-500">Add and manage available products</p>
       </div>
       
-      {selectedOrder ? (
-        <OrderDetails 
-          orderId={selectedOrder} 
-          onBack={() => setSelectedOrder(null)}
-          onUpdate={handleOrderUpdate}
-        />
-      ) : (
-        <>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <form onSubmit={handleSearch} className="flex w-full md:w-auto">
-              <div className="relative flex-1">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
-                <Input
-                  type="search"
-                  placeholder="Search by email or order ID..."
-                  className="pl-9"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+      <div className="flex items-center justify-between mb-6">
+        <form onSubmit={handleSearch} className="flex">
+          <div className="relative flex-1">
+            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
+            <Input
+              type="search"
+              placeholder="Search products..."
+              className="pl-9"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <Button 
+            type="submit" 
+            variant="secondary" 
+            className="ml-2"
+          >
+            Search
+          </Button>
+        </form>
+        
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          <DialogTrigger asChild>
+            <Button>
+              <Plus className="mr-2 h-4 w-4" /> Add Product
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[550px]">
+            <DialogHeader>
+              <DialogTitle>Add New Product</DialogTitle>
+              <DialogDescription>
+                Enter the details for the new product below.
+              </DialogDescription>
+            </DialogHeader>
+            
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="name">Product Name</Label>
+                  <Input
+                    id="name"
+                    value={newProduct.name}
+                    onChange={(e) => handleInputChange("name", e.target.value)}
+                    placeholder="Product name"
+                  />
+                </div>
+                
+                <div className="grid gap-2">
+                  <Label htmlFor="price">Price ($)</Label>
+                  <Input
+                    id="price"
+                    value={newProduct.price}
+                    onChange={(e) => handleInputChange("price", e.target.value)}
+                    placeholder="29.99"
+                  />
+                </div>
+              </div>
+              
+              <div className="grid gap-2">
+                <Label htmlFor="description">Description</Label>
+                <Textarea
+                  id="description"
+                  value={newProduct.description || ""}
+                  onChange={(e) => handleInputChange("description", e.target.value)}
+                  placeholder="Product description"
+                  rows={3}
                 />
               </div>
-              <Button 
-                type="submit" 
-                variant="secondary" 
-                className="ml-2"
-              >
-                Search
-              </Button>
-            </form>
+              
+              <div className="grid gap-2">
+                <Label htmlFor="category">Category</Label>
+                <select
+                  id="category"
+                  value={newProduct.category}
+                  onChange={(e) => handleInputChange("category", e.target.value)}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                >
+                  <option value="merchandise">Merchandise</option>
+                  <option value="fruit">Fruit</option>
+                </select>
+              </div>
+              
+              <div className="grid gap-2">
+                <Label htmlFor="in_stock">Availability</Label>
+                <select
+                  id="in_stock"
+                  value={newProduct.in_stock ? "true" : "false"}
+                  onChange={(e) => handleInputChange("in_stock", e.target.value === "true")}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                >
+                  <option value="true">Available</option>
+                  <option value="false">Not Available</option>
+                </select>
+              </div>
+              
+              <div className="grid gap-2">
+                <Label>Product Image</Label>
+                <ImageUploader 
+                  path="products" 
+                  onUploaded={handleImageUploaded} 
+                  existingUrl={newProduct.image_url}
+                />
+              </div>
+            </div>
             
-            <div className="flex items-center space-x-2 w-full md:w-auto">
-              <Select 
-                value={statusFilter} 
-                onValueChange={handleStatusFilterChange}
-              >
-                <SelectTrigger className="w-full md:w-[180px]">
-                  <SelectValue placeholder="Filter by status" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="">All Statuses</SelectItem>
-                  <SelectItem value="pending">Pending</SelectItem>
-                  <SelectItem value="paid">Paid</SelectItem>
-                  <SelectItem value="processing">Processing</SelectItem>
-                  <SelectItem value="shipped">Shipped</SelectItem>
-                  <SelectItem value="delivered">Delivered</SelectItem>
-                  <SelectItem value="cancelled">Cancelled</SelectItem>
-                  <SelectItem value="refunded">Refunded</SelectItem>
-                </SelectContent>
-              </Select>
-              
-              <Button 
-                variant="outline" 
-                onClick={handleClearFilters}
-                disabled={!isFiltering}
-              >
-                Reset
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant="outline">Cancel</Button>
+              </DialogClose>
+              <Button onClick={handleAddProduct}>
+                Add Product
               </Button>
-            </div>
-          </div>
-          
-          <Card className="border-dashed bg-white">
-            <CardContent className="p-0">
-              <OrdersTable 
-                orders={orders} 
-                loading={loading} 
-                isFiltering={isFiltering}
-                handleOrderClick={handleOrderClick} 
-              />
-            </CardContent>
-          </Card>
-          
-          {totalPages > 1 && (
-            <Pagination className="mt-4">
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious 
-                    onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-                    className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
-                  />
-                </PaginationItem>
-                {paginationItems}
-                <PaginationItem>
-                  <PaginationNext 
-                    onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
-                    className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
-                  />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
-          )}
-        </>
-      )}
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      </div>
       
-      {/* Let's also add a helpful card to guide users when there are no orders */}
-      {!loading && orders.length === 0 && !selectedOrder && (
-        <Card className="mt-8 border-dashed">
-          <CardHeader>
-            <CardTitle>Getting Started with Orders</CardTitle>
-            <CardDescription>
-              Here are some tips to help you prepare for your first orders
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="bg-peach/10 p-2 rounded-full mr-3">
-                  <Package className="h-5 w-5 text-peach" />
-                </div>
-                <div>
-                  <h3 className="text-base font-medium">Add Products</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Make sure you have products available in your store with inventory set up.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-peach/10 p-2 rounded-full mr-3">
-                  <Inbox className="h-5 w-5 text-peach" />
-                </div>
-                <div>
-                  <h3 className="text-base font-medium">Set Up Stripe</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Verify your Stripe integration is working correctly to process payments.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-peach/10 p-2 rounded-full mr-3">
-                  <ShoppingBag className="h-5 w-5 text-peach" />
-                </div>
-                <div>
-                  <h3 className="text-base font-medium">Test Your Checkout</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Place a test order yourself to make sure the customer experience is smooth.
-                  </p>
-                </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>All Products</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {loading ? (
+            <div className="flex justify-center py-12">
+              <div className="flex flex-col items-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-peach mb-4"></div>
+                <p className="text-muted-foreground">Loading products...</p>
               </div>
             </div>
-          </CardContent>
-        </Card>
-      )}
+          ) : products.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-12 text-center">
+              <div className="bg-muted rounded-full p-3 mb-4">
+                <Package className="h-8 w-8 text-muted-foreground" />
+              </div>
+              <h3 className="text-lg font-medium mb-2">
+                {searchTerm ? "No matching products found" : "No products added yet"}
+              </h3>
+              <p className="text-sm text-muted-foreground max-w-md mb-6">
+                {searchTerm 
+                  ? "Try adjusting your search or clear it to see all products." 
+                  : "Start by adding your first product using the 'Add Product' button."}
+              </p>
+            </div>
+          ) : (
+            <div className="rounded-md border">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Image</TableHead>
+                    <TableHead>Name</TableHead>
+                    <TableHead>Price</TableHead>
+                    <TableHead>Category</TableHead>
+                    <TableHead>Availability</TableHead>
+                    <TableHead className="text-right">Actions</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {products.map((product) => (
+                    <TableRow key={product.id}>
+                      <TableCell>
+                        {product.image_url ? (
+                          <img 
+                            src={product.image_url} 
+                            alt={product.name} 
+                            className="h-12 w-12 object-cover rounded"
+                          />
+                        ) : (
+                          <div className="h-12 w-12 bg-gray-200 rounded flex items-center justify-center">
+                            <Package className="h-6 w-6 text-gray-400" />
+                          </div>
+                        )}
+                      </TableCell>
+                      <TableCell className="font-medium">{product.name}</TableCell>
+                      <TableCell>${product.price}</TableCell>
+                      <TableCell>
+                        <Badge variant="outline">
+                          {product.category === "merchandise" ? "Merchandise" : "Fruit"}
+                        </Badge>
+                      </TableCell>
+                      <TableCell>
+                        <Badge 
+                          className={product.in_stock ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}
+                        >
+                          {product.in_stock ? "Available" : "Unavailable"}
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                          onClick={() => handleDeleteProduct(product.id)}
+                        >
+                          Delete
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 };
 
-export default OrderManager;
+export default ProductListing;
