@@ -49,7 +49,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-peach">
+        <Link to="/" className="text-2xl font-bold text-olive">
           Moffatt Ranch
         </Link>
 
@@ -131,8 +131,8 @@ const Navbar = () => {
                           to={item.href}
                           className={`block py-2 ${
                             location.pathname === item.href
-                              ? "text-peach font-medium"
-                              : "text-gray-800 hover:text-peach"
+                              ? "text-olive font-medium"
+                              : "text-gray-800 hover:text-olive"
                           }`}
                           onClick={closeMenu}
                         >
@@ -158,8 +158,8 @@ const Navbar = () => {
                       to={item.href}
                       className={`nav-link ${
                         location.pathname === item.href
-                          ? "text-peach font-medium"
-                          : "text-ranch-dark hover:text-peach"
+                          ? "text-olive font-medium"
+                          : "text-ranch-dark hover:text-olive"
                       }`}
                     >
                       {item.name}

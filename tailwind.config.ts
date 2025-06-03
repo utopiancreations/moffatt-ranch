@@ -53,26 +53,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// Moffatt Ranch colors - Updated to olive green theme
+				olive: {
+					light: "#E8F5E8",
+					DEFAULT: "#556B2F"
 				},
-				// Moffatt Ranch colors
-				peach: {
-					light: "#FDE1D3",
-					DEFAULT: "#F97316"
-				},
-				leaf: {
-					DEFAULT: "#F2FCE2"
+				seaMoss: {
+					DEFAULT: "#8FBC8F"
 				},
 				ranch: {
-					blue: "#0EA5E9",
+					green: "#556B2F",
 					dark: "#221F26"
 				}
 			},
