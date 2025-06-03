@@ -7,22 +7,21 @@ const Index = () => {
   return (
     <div>
       {/* Hero Section */}
-
-<Hero
-  backgroundVideo="https://firebasestorage.googleapis.com/v0/b/joshresumesite.firebasestorage.app/o/video_fx_undefined_2025_05_03_17_23.mp4?alt=media&token=e7978bb6-5840-48f9-80e3-63806c993f9b"
-  backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.png"
-  imageOverlay="/lovable-uploads/9e45f4b0-f497-4cc5-8015-3058c909c171.png"
-  buttonText="Plan Your Visit"
-  buttonLink="/visit"
-  useUrbandale={true}
->
-  <p className="text-xl text-white max-w-3xl mx-auto font-cabin">
-    Welcome to Moffatt Ranch, where we grow the juiciest peaches, nectarines, and Asian pears in Brentwood, California since 1955
-  </p>
-</Hero>
+      <Hero
+        backgroundVideo="https://firebasestorage.googleapis.com/v0/b/joshresumesite.firebasestorage.app/o/video_fx_undefined_2025_05_03_17_23.mp4?alt=media&token=e7978bb6-5840-48f9-80e3-63806c993f9b"
+        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.png"
+        imageOverlay="/lovable-uploads/9e45f4b0-f497-4cc5-8015-3058c909c171.png"
+        buttonText="Plan Your Visit"
+        buttonLink="/visit"
+        useUrbandale={true}
+      >
+        <p className="text-xl text-white max-w-3xl mx-auto font-cabin">
+          Welcome to Moffatt Ranch, where we grow the juiciest peaches, nectarines, and Asian pears in Brentwood, California since 1955
+        </p>
+      </Hero>
       
       {/* Features Section */}
-      <section className="section-padding bg-leaf">
+      <section className="section-padding section-light-sage">
         <div className="container mx-auto">
           <h2 className="heading-medium text-center mb-12">Experience Moffatt Ranch</h2>
           
@@ -79,7 +78,7 @@ const Index = () => {
       </section>
       
       {/* About Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="order-2 md:order-1">
@@ -105,12 +104,12 @@ const Index = () => {
       </section>
       
       {/* Fruit Varieties Section */}
-      <section className="section-padding bg-peach-light">
+      <section className="section-padding section-light-green">
         <div className="container mx-auto">
           <h2 className="heading-medium text-center mb-10">Our Delicious Varieties</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="enhanced-card overflow-hidden">
               <img 
                 src="lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png" 
                 alt="Fresh peach closeup" 
@@ -121,7 +120,7 @@ const Index = () => {
                 <p className="text-gray-700 mb-4">
                   From yellow to white varieties, our peaches are known for their perfect balance of sweetness and juiciness.
                 </p>
-                <Link to="/fruit" className="text-peach font-medium hover:text-peach/90 flex items-center">
+                <Link to="/fruit" className="text-olive font-medium hover:text-ranch-accent flex items-center">
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -130,7 +129,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="enhanced-card overflow-hidden">
               <img 
                 src="public/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png" 
                 alt="Fresh nectarines" 
@@ -141,7 +140,7 @@ const Index = () => {
                 <p className="text-gray-700 mb-4">
                   Enjoy the smooth skin and vibrant flavor of our yellow and white nectarine varieties.
                 </p>
-                <Link to="/fruit" className="text-peach font-medium hover:text-peach/90 flex items-center">
+                <Link to="/fruit" className="text-olive font-medium hover:text-ranch-accent flex items-center">
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -150,7 +149,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="enhanced-card overflow-hidden">
               <img 
                 src="public/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png" 
                 alt="Asian pears" 
@@ -161,7 +160,7 @@ const Index = () => {
                 <p className="text-gray-700 mb-4">
                   Crisp, juicy and refreshingly sweet, our Asian pears are the perfect late-summer treat.
                 </p>
-                <Link to="/fruit" className="text-peach font-medium hover:text-peach/90 flex items-center">
+                <Link to="/fruit" className="text-olive font-medium hover:text-ranch-accent flex items-center">
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -178,38 +177,47 @@ const Index = () => {
       </section>
       
       {/* Visit Section */}
-      <section className="section-padding bg-ranch-blue text-white">
+      <section className="section-padding section-white">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="heading-medium mb-4">Plan Your Visit</h2>
-            <p className="text-xl max-w-3xl mx-auto">
-              Join us for a memorable day at the orchard. U-Pick is available seasonally from June through August.
-            </p>
+          <div className="text-center mb-8">
+            <div className="bg-sage-light/30 p-6 rounded-lg max-w-3xl mx-auto mb-8">
+              <h2 className="heading-medium mb-4 text-ranch-text">Plan Your Visit</h2>
+              <p className="text-xl">
+                Join us for a memorable day at the orchard. U-Pick is available seasonally from June through August.
+              </p>
+            </div>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center md:text-left">
-              <div>
-                <h3 className="text-2xl font-serif font-semibold mb-3">Location</h3>
-                <p className="mb-4">123 Orchard Lane, Brentwood, CA 94513</p>
-                <h3 className="text-2xl font-serif font-semibold mb-3 mt-6">Contact</h3>
-                <p>(925) 555-1234</p>
-                <p>info@moffattranchpeaches.com</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Location and Contact Container */}
+            <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
+              <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Location & Contact</h3>
+              <div className="mb-6">
+                <h4 className="text-lg font-medium mb-2 text-olive">Address</h4>
+                <p className="mb-4 text-gray-700">123 Orchard Lane, Brentwood, CA 94513</p>
+                <h4 className="text-lg font-medium mb-2 text-olive">Contact</h4>
+                <p className="text-gray-700">(925) 555-1234</p>
+                <p className="text-gray-700">info@moffattranchpeaches.com</p>
               </div>
-              
-              <div>
-                <h3 className="text-2xl font-serif font-semibold mb-3">Current Hours</h3>
+            </div>
+            
+            {/* Hours and Directions Container */}
+            <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
+              <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Current Hours</h3>
+              <div className="mb-6">
                 <div className="mb-1">
-                  <span className="font-medium">Friday - Sunday:</span> 9:00am - 4:00pm
+                  <span className="font-medium text-gray-800">Friday - Sunday:</span> 
+                  <span className="text-gray-700 ml-2">9:00am - 4:00pm</span>
                 </div>
                 <div className="mb-4">
-                  <span className="font-medium">Monday - Thursday:</span> Closed
+                  <span className="font-medium text-gray-800">Monday - Thursday:</span> 
+                  <span className="text-gray-700 ml-2">Closed</span>
                 </div>
-                <p className="text-sm mb-4">
+                <p className="text-sm mb-6 text-gray-600">
                   *Hours may vary depending on fruit availability. Please check our social media for updates.
                 </p>
                 
-                <div className="flex justify-center md:justify-start mt-6">
+                <div className="flex justify-center md:justify-start">
                   <Link to="/visit" className="btn-primary">Get Directions</Link>
                 </div>
               </div>

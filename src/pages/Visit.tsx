@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import { Link } from "react-router-dom";
 
@@ -13,7 +12,7 @@ const Visit = () => {
       />
       
       {/* Location Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
@@ -98,7 +97,7 @@ const Visit = () => {
       </section>
       
       {/* U-Pick Information */}
-      <section className="section-padding bg-leaf">
+      <section className="section-padding section-light-sage">
         <div className="container mx-auto">
           <h2 className="heading-medium text-center mb-10">U-Pick Experience</h2>
           
@@ -162,81 +161,95 @@ const Visit = () => {
       </section>
       
       {/* What to Bring */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="heading-medium text-center mb-10">What to Bring</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 rounded-full bg-peach-light text-peach flex items-center justify-center mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Sun Protection</h3>
-                <p className="text-gray-700">Hats, sunscreen, and sunglasses are recommended as the orchard offers limited shade during picking.</p>
-              </div>
-            </div>
+      <section className="section-padding section-light-green">
+        <div className="container mx-auto">
+          <div className="bg-white/90 backdrop-blur-sm p-8 md:p-12 rounded-lg shadow-lg max-w-5xl mx-auto">
+            <h2 className="heading-medium text-center mb-10 text-ranch-text">What to Bring</h2>
             
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 rounded-full bg-peach-light text-peach flex items-center justify-center mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+              <div className="bg-cardBg-sage p-6 rounded-lg border border-borderSage">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-olive-light text-olive flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Sun Protection</h3>
+                    <p className="text-gray-700">Hats, sunscreen, and sunglasses are recommended as the orchard offers limited shade during picking.</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Water</h3>
-                <p className="text-gray-700">Bring water bottles to stay hydrated, especially on hot days. We also have water available for purchase.</p>
+              
+              <div className="bg-cardBg-sage p-6 rounded-lg border border-borderSage">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-olive-light text-olive flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Water</h3>
+                    <p className="text-gray-700">Bring water bottles to stay hydrated, especially on hot days. We also have water available for purchase.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 rounded-full bg-peach-light text-peach flex items-center justify-center mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
-                </svg>
+              
+              <div className="bg-cardBg-sage p-6 rounded-lg border border-borderSage">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-olive-light text-olive flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Cash or Card</h3>
+                    <p className="text-gray-700">We accept both cash and credit cards for payment. No minimum purchase required.</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Cash or Card</h3>
-                <p className="text-gray-700">We accept both cash and credit cards for payment. No minimum purchase required.</p>
+              
+              <div className="bg-cardBg-sage p-6 rounded-lg border border-borderSage">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-olive-light text-olive flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Comfortable Shoes</h3>
+                    <p className="text-gray-700">Wear closed-toe shoes or sturdy sandals as the orchard ground can be uneven.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 rounded-full bg-peach-light text-peach flex items-center justify-center mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
-                </svg>
+              
+              <div className="bg-cardBg-sage p-6 rounded-lg border border-borderSage">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-olive-light text-olive flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Extra Bags or Boxes</h3>
+                    <p className="text-gray-700">While we provide containers for picking, you might want to bring additional bags or boxes for transporting your fruit home.</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Comfortable Shoes</h3>
-                <p className="text-gray-700">Wear closed-toe shoes or sturdy sandals as the orchard ground can be uneven.</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 rounded-full bg-peach-light text-peach flex items-center justify-center mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Extra Bags or Boxes</h3>
-                <p className="text-gray-700">While we provide containers for picking, you might want to bring additional bags or boxes for transporting your fruit home.</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <div className="flex-shrink-0 h-10 w-10 rounded-full bg-peach-light text-peach flex items-center justify-center mr-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium mb-2">Camera</h3>
-                <p className="text-gray-700">Capture the fun memories of your day at the orchard! Our scenic farm makes for great photos.</p>
+              
+              <div className="bg-cardBg-sage p-6 rounded-lg border border-borderSage">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-olive-light text-olive flex items-center justify-center mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Camera</h3>
+                    <p className="text-gray-700">Capture the fun memories of your day at the orchard! Our scenic farm makes for great photos.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -244,7 +257,7 @@ const Visit = () => {
       </section>
       
       {/* Amenities & Policies */}
-      <section className="section-padding bg-peach-light">
+      <section className="section-padding section-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Amenities */}
