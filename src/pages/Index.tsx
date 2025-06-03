@@ -1,3 +1,4 @@
+
 import Hero from "../components/Hero";
 import FeatureCard from "../components/FeatureCard";
 import { Link } from "react-router-dom";
@@ -18,11 +19,12 @@ const Index = () => {
           Welcome to Moffatt Ranch, where we grow the juiciest peaches, nectarines, and Asian pears in Brentwood, California since 1955
         </p>
       </Hero>
-
+      
       {/* Features Section */}
       <section className="section-padding section-light-sage">
         <div className="container mx-auto">
           <h2 className="heading-medium text-center mb-12">Experience Moffatt Ranch</h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <FeatureCard
               icon={
@@ -36,6 +38,7 @@ const Index = () => {
               title="Family Fun"
               description="Create lasting memories with a fun day of U-Pick fruit harvesting perfect for all ages"
             />
+            
             <FeatureCard
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10">
@@ -47,6 +50,7 @@ const Index = () => {
               title="Farm Fresh Fruit"
               description="Enjoy the sweetest, tree-ripened peaches and nectarines picked at peak freshness"
             />
+            
             <FeatureCard
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10">
@@ -57,6 +61,7 @@ const Index = () => {
               title="Family Owned Since 1955"
               description="Three generations of farming expertise dedicated to growing the best stone fruit"
             />
+            
             <FeatureCard
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10">
@@ -71,7 +76,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+      
       {/* About Section */}
       <section className="section-padding section-white">
         <div className="container mx-auto">
@@ -86,28 +91,29 @@ const Index = () => {
               </p>
               <Link to="/about" className="btn-primary inline-block">Learn Our Story</Link>
             </div>
+            
             <div className="order-1 md:order-2">
-              <img
-                src="/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png"
-                alt="Jim and Michele Moffatt with fresh peaches"
+              <img 
+                src="/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png" 
+                alt="Jim and Michele Moffatt with fresh peaches" 
                 className="rounded-lg shadow-lg h-auto"
               />
             </div>
           </div>
         </div>
       </section>
-
+      
       {/* Fruit Varieties Section */}
       <section className="section-padding section-light-green">
         <div className="container mx-auto">
           <h2 className="heading-medium text-center mb-10">Our Delicious Varieties</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="enhanced-card overflow-hidden">
-              <img
-                src="/lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png"
-                alt="Fresh peach closeup"
-                className="w-full h-64 object-cover object-top"
-                style={{ objectPosition: "top" }}
+              <img 
+                src="lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png" 
+                alt="Fresh peach closeup" 
+                className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold mb-2">Peaches</h3>
@@ -122,10 +128,11 @@ const Index = () => {
                 </Link>
               </div>
             </div>
+            
             <div className="enhanced-card overflow-hidden">
-              <img
-                src="/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png"
-                alt="Fresh nectarines"
+              <img 
+                src="public/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png" 
+                alt="Fresh nectarines" 
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
@@ -141,10 +148,11 @@ const Index = () => {
                 </Link>
               </div>
             </div>
+            
             <div className="enhanced-card overflow-hidden">
-              <img
-                src="/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png"
-                alt="Asian pears"
+              <img 
+                src="public/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png" 
+                alt="Asian pears" 
                 className="w-full h-64 object-cover object-center"
               />
               <div className="p-6">
@@ -161,12 +169,13 @@ const Index = () => {
               </div>
             </div>
           </div>
+          
           <div className="text-center mt-10">
             <Link to="/fruit" className="btn-outline inline-block">View All Varieties</Link>
           </div>
         </div>
       </section>
-
+      
       {/* Visit Section */}
       <section className="section-padding section-white">
         <div className="container mx-auto">
@@ -178,6 +187,7 @@ const Index = () => {
               </p>
             </div>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Location and Contact Container */}
             <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
@@ -190,21 +200,23 @@ const Index = () => {
                 <p className="text-gray-700">info@moffattranchpeaches.com</p>
               </div>
             </div>
+            
             {/* Hours and Directions Container */}
             <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Current Hours</h3>
               <div className="mb-6">
                 <div className="mb-1">
-                  <span className="font-medium text-gray-800">Friday - Sunday:</span>
+                  <span className="font-medium text-gray-800">Friday - Sunday:</span> 
                   <span className="text-gray-700 ml-2">9:00am - 4:00pm</span>
                 </div>
                 <div className="mb-4">
-                  <span className="font-medium text-gray-800">Monday - Thursday:</span>
+                  <span className="font-medium text-gray-800">Monday - Thursday:</span> 
                   <span className="text-gray-700 ml-2">Closed</span>
                 </div>
                 <p className="text-sm mb-6 text-gray-600">
                   *Hours may vary depending on fruit availability. Please check our social media for updates.
                 </p>
+                
                 <div className="flex justify-center md:justify-start">
                   <Link to="/visit" className="btn-primary">Get Directions</Link>
                 </div>
