@@ -102,22 +102,104 @@
 }
 
 .nav-link {
-  @apply hover:text-olive transition-colors;
+  @apply hover:text-ranch-accent transition-colors;
 }
 
+/* Enhanced 3D Button Styling */
 .btn-primary {
-  @apply bg-olive hover:bg-olive/90 text-white px-6 py-3 rounded-md font-medium transition-colors;
-  font-family: 'Cabin', sans-serif;
+  @apply text-white px-6 py-3 rounded-md font-medium transition-all duration-200 font-cabin;
+  background: linear-gradient(145deg, #6B8E23, #556B2F);
+  box-shadow: 
+    0 4px 8px rgba(85, 107, 47, 0.3),
+    0 2px 4px rgba(85, 107, 47, 0.2);
+  border: 1px solid #4A5928;
+  transform: translateY(0);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(85, 107, 47, 0.4),
+    0 3px 6px rgba(85, 107, 47, 0.3);
+  background: linear-gradient(145deg, #7A9D2A, #5E7A35);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 2px 4px rgba(85, 107, 47, 0.3),
+    0 1px 2px rgba(85, 107, 47, 0.2);
 }
 
 .btn-secondary {
-  @apply bg-seaMoss hover:bg-seaMoss/90 text-white px-6 py-3 rounded-md font-medium transition-colors;
-  font-family: 'Cabin', sans-serif;
+  @apply text-white px-6 py-3 rounded-md font-medium transition-all duration-200 font-cabin;
+  background: linear-gradient(145deg, #8FBC8F, #7AAA7A);
+  box-shadow: 
+    0 4px 8px rgba(143, 188, 143, 0.3),
+    0 2px 4px rgba(143, 188, 143, 0.2);
+  border: 1px solid #6B9B6B;
+  transform: translateY(0);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(143, 188, 143, 0.4),
+    0 3px 6px rgba(143, 188, 143, 0.3);
+  background: linear-gradient(145deg, #9ACA9A, #85B885);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 2px 4px rgba(143, 188, 143, 0.3),
+    0 1px 2px rgba(143, 188, 143, 0.2);
 }
 
 .btn-outline {
-  @apply border border-olive text-olive hover:bg-olive/10 px-6 py-3 rounded-md font-medium transition-colors;
-  font-family: 'Cabin', sans-serif;
+  @apply bg-transparent border-2 border-olive text-olive hover:bg-olive hover:text-white px-6 py-3 rounded-md font-medium transition-all duration-200 font-cabin;
+  box-shadow: 
+    0 2px 4px rgba(85, 107, 47, 0.2);
+  transform: translateY(0);
+}
+
+.btn-outline:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 8px rgba(85, 107, 47, 0.3),
+    0 2px 4px rgba(85, 107, 47, 0.2);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* Section Background Classes */
+.section-light-sage {
+  background-color: #F5F8F0;
+}
+
+.section-white {
+  background-color: #FFFFFF;
+}
+
+.section-light-green {
+  background-color: #E8F1E1;
+}
+
+/* Enhanced Card Styling */
+.enhanced-card {
+  @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.07),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.enhanced-card:hover {
+  box-shadow: 
+    0 10px 15px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 .font-urbandale {

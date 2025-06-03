@@ -53,7 +53,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Moffatt Ranch colors - Updated to olive green theme
+				// Enhanced Moffatt Ranch colors
 				olive: {
 					light: "#E8F5E8",
 					DEFAULT: "#556B2F"
@@ -63,7 +63,14 @@ export default {
 				},
 				ranch: {
 					green: "#556B2F",
-					dark: "#221F26"
+					dark: "#221F26",
+					accent: "#6B8E23",
+					text: "#2D3E1F"
+				},
+				// New background variations
+				sage: {
+					light: "#F5F8F0",
+					DEFAULT: "#E8F1E1"
 				}
 			},
 			borderRadius: {
@@ -97,6 +104,11 @@ export default {
 				serif: ['Playfair Display', 'serif'],
 				sans: ['Cabin', 'sans-serif'],
 				cabin: ['Cabin', 'sans-serif']
+			},
+			boxShadow: {
+				'3d-primary': '0 4px 8px rgba(85, 107, 47, 0.3), 0 2px 4px rgba(85, 107, 47, 0.2)',
+				'3d-primary-hover': '0 6px 12px rgba(85, 107, 47, 0.4), 0 3px 6px rgba(85, 107, 47, 0.3)',
+				'3d-primary-active': '0 2px 4px rgba(85, 107, 47, 0.3), 0 1px 2px rgba(85, 107, 47, 0.2)'
 			}
 		}
 	},
