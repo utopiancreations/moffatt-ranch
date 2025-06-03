@@ -17,11 +17,11 @@ export const FruitTypeCard = ({ title, description, varieties, backgroundColor }
       {varieties.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {varieties.map(variety => (
-            <div key={variety.id} className="bg-white rounded-md p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+            <div key={variety.id} className="fruit-variety-card bg-white rounded-md p-4 shadow-sm hover:shadow-md transition-all duration-300">
               <div className="flex items-start justify-between mb-2">
                 <h4 className="font-medium text-olive text-lg">{variety.name}</h4>
                 {variety.featured && (
-                  <span className="bg-ranch-accent text-white text-xs px-2 py-1 rounded-full">Featured</span>
+                  <span className="featured-badge">Featured</span>
                 )}
               </div>
               <p className="text-sm text-gray-600 mb-2 leading-relaxed">{variety.description}</p>

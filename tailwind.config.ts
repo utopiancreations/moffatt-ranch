@@ -67,11 +67,25 @@ export default {
 					accent: "#6B8E23",
 					text: "#2D3E1F"
 				},
-				// New background variations
+				// Enhanced background variations
 				sage: {
 					light: "#F5F8F0",
-					DEFAULT: "#E8F1E1"
-				}
+					DEFAULT: "#E8F1E1",
+					mist: "#F0F4ED"
+				},
+				cream: {
+					DEFAULT: "#FEFDFB",
+					card: "#FDFCFA"
+				},
+				// Card backgrounds
+				cardBg: {
+					white: "#FFFFFF",
+					cream: "#FDFCFA",
+					sage: "#F8FAF6"
+				},
+				// Enhanced borders
+				borderSage: "#D1DCC8",
+				borderLight: "#E5EAE0"
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -108,7 +122,9 @@ export default {
 			boxShadow: {
 				'3d-primary': '0 4px 8px rgba(85, 107, 47, 0.3), 0 2px 4px rgba(85, 107, 47, 0.2)',
 				'3d-primary-hover': '0 6px 12px rgba(85, 107, 47, 0.4), 0 3px 6px rgba(85, 107, 47, 0.3)',
-				'3d-primary-active': '0 2px 4px rgba(85, 107, 47, 0.3), 0 1px 2px rgba(85, 107, 47, 0.2)'
+				'3d-primary-active': '0 2px 4px rgba(85, 107, 47, 0.3), 0 1px 2px rgba(85, 107, 47, 0.2)',
+				'card-hover': '0 8px 25px rgba(85, 107, 47, 0.15)',
+				'contact-grid': '0 4px 20px rgba(85, 107, 47, 0.1)'
 			}
 		}
 	},

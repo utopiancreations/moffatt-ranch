@@ -13,9 +13,9 @@ const Contact = () => {
       />
       
       {/* Contact Info & Form */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <section className="contact-section">
+        <div className="contact-container">
+          <div className="contact-grid">
             {/* Contact Information */}
             <div>
               <h2 className="heading-medium mb-8">Get In Touch</h2>
@@ -23,7 +23,7 @@ const Contact = () => {
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xl font-serif font-semibold mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-ranch-accent" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                     Visit Our Ranch
@@ -33,7 +33,7 @@ const Contact = () => {
                 
                 <div>
                   <h3 className="text-xl font-serif font-semibold mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-ranch-accent" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                     Call Us
@@ -43,7 +43,7 @@ const Contact = () => {
                 
                 <div>
                   <h3 className="text-xl font-serif font-semibold mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-ranch-accent" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
@@ -54,7 +54,7 @@ const Contact = () => {
                 
                 <div>
                   <h3 className="text-xl font-serif font-semibold mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-ranch-accent" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                     </svg>
                     Hours of Operation
@@ -66,7 +66,7 @@ const Contact = () => {
                     <div>
                       <span className="font-medium">Monday - Thursday:</span> Closed
                     </div>
-                    <p className="text-sm text-peach mt-2">
+                    <p className="text-sm text-ranch-accent mt-2">
                       *Hours may vary depending on fruit availability. Please check our social media for updates.
                     </p>
                   </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                       href="https://facebook.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-peach hover:text-peach/80 transition-colors"
+                      className="text-ranch-accent hover:text-ranch-accent/80 transition-colors"
                     >
                       <span className="sr-only">Facebook</span>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ const Contact = () => {
                       href="https://instagram.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-peach hover:text-peach/80 transition-colors"
+                      className="text-ranch-accent hover:text-ranch-accent/80 transition-colors"
                     >
                       <span className="sr-only">Instagram</span>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
@@ -111,37 +111,37 @@ const Contact = () => {
       </section>
       
       {/* FAQ Section */}
-      <section className="section-padding bg-peach-light">
+      <section className="section-padding section-light-green">
         <div className="container mx-auto max-w-4xl">
           <h2 className="heading-medium text-center mb-10">Frequently Asked Questions</h2>
           
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">When is your U-Pick season?</h3>
               <p className="text-gray-700">Our U-Pick season typically runs from early June through August, depending on weather conditions and fruit ripening schedules. Different varieties ripen at different times throughout the season.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">Do I need a reservation to visit?</h3>
               <p className="text-gray-700">No, reservations are not required. Just stop by during our open hours! For large groups (10+ people), we do appreciate a call ahead so we can better accommodate you.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">Are dogs allowed at the ranch?</h3>
               <p className="text-gray-700">Yes! We are a dog-friendly orchard. We just ask that all dogs remain on a leash at all times and that owners clean up after their pets.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">What forms of payment do you accept?</h3>
               <p className="text-gray-700">We accept cash and all major credit cards. Currently, we do not accept personal checks.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">Do you ship fruit?</h3>
               <p className="text-gray-700">Currently, we do not offer shipping services. All of our fruit is available for purchase directly at the ranch during our operational hours.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">Is the orchard accessible for those with mobility challenges?</h3>
               <p className="text-gray-700">Parts of our orchard have improved pathways that are more accessible, and we're happy to direct visitors to these areas. The ground can be uneven in places, but our staff is always available to assist or to pick fruit from less accessible areas upon request.</p>
             </div>

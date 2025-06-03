@@ -44,11 +44,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+      className={`fixed w-full z-50 navbar transition-all duration-300 ${
+        isScrolled ? "scrolled" : ""
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center py-4">
         <Link to="/" className="text-2xl font-bold text-olive">
           Moffatt Ranch
         </Link>
