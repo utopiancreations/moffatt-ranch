@@ -38,7 +38,8 @@ const Contact = () => {
                     </svg>
                     Call Us
                   </h3>
-                  <p className="text-gray-700 ml-8">(209) 483-0048 or (916) 337-1738</p>
+                  <p className="text-gray-700 ml-8"><a href="tel:+12094830048" className="hover:text-ranch-accent">(209) 483-0048</a></p>
+                  <p className="text-gray-700 ml-8"><a href="tel:+19163371738" className="hover:text-ranch-accent">(916) 337-1738</a></p>
                 </div>
                 
                 <div>
@@ -49,7 +50,7 @@ const Contact = () => {
                     </svg>
                     Email Us
                   </h3>
-                  <p className="text-gray-700 ml-8">moffattranch1870@gmail.com</p>
+                  <p className="text-gray-700 ml-8"><a href="mailto:moffattranch1870@gmail.com" className="hover:text-ranch-accent">moffattranch1870@gmail.com</a></p>
                 </div>
                 
                 <div>
