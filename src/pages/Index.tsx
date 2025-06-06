@@ -36,7 +36,7 @@ const Index = () => {
                 </svg>
               }
               title="Family Fun"
-              description="Create lasting memories with a fun day of U-Pick fruit harvesting perfect for all ages"
+              description="Create lasting memories with a fun day of U-Pick fruit harvesting, perfect for all ages."
             />
             
             <FeatureCard
@@ -48,7 +48,7 @@ const Index = () => {
                 </svg>
               }
               title="Farm Fresh Fruit"
-              description="Enjoy the sweetest, tree-ripened peaches and nectarines picked at peak freshness"
+              description="Enjoy the sweetest, tree-ripened peaches and nectarines, picked at peak freshness."
             />
             
             <FeatureCard
@@ -59,7 +59,7 @@ const Index = () => {
                 </svg>
               }
               title="Family Owned Since 1955"
-              description="Three generations of farming expertise dedicated to growing the best stone fruit"
+              description="Three generations of farming expertise dedicated to growing the best stone fruit."
             />
             
             <FeatureCard
@@ -71,7 +71,7 @@ const Index = () => {
                 </svg>
               }
               title="Dog Friendly"
-              description="Leashed dogs are welcome to join your family on your fruit picking adventure"
+              description="Leashed dogs are welcome to join your family on your fruit-picking adventure."
             />
           </div>
         </div>
@@ -111,14 +111,14 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="enhanced-card overflow-hidden">
               <img 
-                src="lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png" 
+                src="/lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png"
                 alt="Fresh peach closeup" 
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold mb-2">Peaches</h3>
                 <p className="text-gray-700 mb-4">
-                  From yellow to white varieties, our peaches are known for their perfect balance of sweetness and juiciness.
+                  Yellow to white freestone varieties, our peaches are known for their perfect balance of sweetness and juiciness.
                 </p>
                 <Link to="/fruit" className="text-olive font-medium hover:text-ranch-accent flex items-center">
                   Learn More
@@ -131,7 +131,7 @@ const Index = () => {
             
             <div className="enhanced-card overflow-hidden">
               <img 
-                src="public/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png" 
+                src="/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png"
                 alt="Fresh nectarines" 
                 className="w-full h-64 object-cover"
               />
@@ -151,7 +151,7 @@ const Index = () => {
             
             <div className="enhanced-card overflow-hidden">
               <img 
-                src="public/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png" 
+                src="/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png"
                 alt="Asian pears" 
                 className="w-full h-64 object-cover object-center"
               />
@@ -194,10 +194,10 @@ const Index = () => {
               <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Location & Contact</h3>
               <div className="mb-6">
                 <h4 className="text-lg font-medium mb-2 text-olive">Address</h4>
-                <p className="mb-4 text-gray-700">123 Orchard Lane, Brentwood, CA 94513</p>
+                <p className="mb-4 text-gray-700">1870 Walnut Blvd, Brentwood, CA 94513</p>
                 <h4 className="text-lg font-medium mb-2 text-olive">Contact</h4>
-                <p className="text-gray-700">(925) 555-1234</p>
-                <p className="text-gray-700">info@moffattranchpeaches.com</p>
+                <p className="text-gray-700">(209) 483-0048 or (916) 337-1738</p>
+                <p className="text-gray-700">moffattranch1870@gmail.com</p>
               </div>
             </div>
             
@@ -205,20 +205,45 @@ const Index = () => {
             <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Current Hours</h3>
               <div className="mb-6">
+                <p className="text-xl text-red-600 font-bold mb-4">Temporarily Closed</p>
                 <div className="mb-1">
-                  <span className="font-medium text-gray-800">Friday - Sunday:</span> 
-                  <span className="text-gray-700 ml-2">9:00am - 4:00pm</span>
+                  <span className="font-medium text-gray-800">Monday:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
+                </div>
+                <div className="mb-1">
+                  <span className="font-medium text-gray-800">Tuesday:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
+                </div>
+                <div className="mb-1">
+                  <span className="font-medium text-gray-800">Wednesday:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
+                </div>
+                <div className="mb-1">
+                  <span className="font-medium text-gray-800">Thursday:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
+                </div>
+                <div className="mb-1">
+                  <span className="font-medium text-gray-800">Friday:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
+                </div>
+                <div className="mb-1">
+                  <span className="font-medium text-gray-800">Saturday:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
+                </div>
+                <div className="mb-1">
+                  <span className="font-medium text-gray-800">Sunday:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
                 </div>
                 <div className="mb-4">
-                  <span className="font-medium text-gray-800">Monday - Thursday:</span> 
-                  <span className="text-gray-700 ml-2">Closed</span>
+                  <span className="font-medium text-gray-800">July 4th:</span>
+                  <span className="text-gray-700 ml-2">8:00am - 4:30pm</span>
                 </div>
                 <p className="text-sm mb-6 text-gray-600">
-                  *Hours may vary depending on fruit availability. Please check our social media for updates.
+                  *Hours may vary. Please check our social media for the latest updates and U-Pick availability.
                 </p>
                 
                 <div className="flex justify-center md:justify-start">
-                  <Link to="/visit" className="btn-primary">Get Directions</Link>
+                  <Link to="/visit" className="btn-primary">Get Directions & More Info</Link>
                 </div>
               </div>
             </div>
