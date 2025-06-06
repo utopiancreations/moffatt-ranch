@@ -95,7 +95,7 @@ const Navbar = () => {
 
             {/* Mobile menu drawer */}
             <div
-              className={`fixed top-0 right-0 h-full w-64 bg-primary-green bg-opacity-100 shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
+              className={`fixed top-0 right-0 h-full w-64 bg-olive bg-opacity-100 shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
                 isMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
