@@ -28,7 +28,7 @@ const Contact = () => {
                     </svg>
                     Visit Our Ranch
                   </h3>
-                  <p className="text-gray-700 ml-8">123 Orchard Lane, Brentwood, CA 94513</p>
+                  <p className="text-gray-700 ml-8">1870 Walnut Blvd, Brentwood, CA 94513</p>
                 </div>
                 
                 <div>
@@ -38,7 +38,7 @@ const Contact = () => {
                     </svg>
                     Call Us
                   </h3>
-                  <p className="text-gray-700 ml-8">(925) 555-1234</p>
+                  <p className="text-gray-700 ml-8">(209) 483-0048 or (916) 337-1738</p>
                 </div>
                 
                 <div>
@@ -49,7 +49,7 @@ const Contact = () => {
                     </svg>
                     Email Us
                   </h3>
-                  <p className="text-gray-700 ml-8">info@moffattranchpeaches.com</p>
+                  <p className="text-gray-700 ml-8">moffattranch1870@gmail.com</p>
                 </div>
                 
                 <div>

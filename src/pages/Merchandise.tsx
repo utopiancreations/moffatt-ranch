@@ -18,6 +18,7 @@ const Merchandise = () => {
           <h2 className="heading-medium text-center mb-10">Our Products</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/*
             {merchandiseItems.map((item) => (
               <MerchandiseCard
                 key={item.id}
@@ -28,6 +29,11 @@ const Merchandise = () => {
                 available={item.available}
               />
             ))}
+            */}
+            <div className="col-span-full text-center py-12">
+              <h3 className="text-2xl font-semibold text-gray-700 mb-4">Merchandise Coming Soon!</h3>
+              <p className="text-gray-500">Check back later for our exciting new products.</p>
+            </div>
           </div>
           
           <div className="mt-16 text-center bg-olive-light p-8 rounded-lg">

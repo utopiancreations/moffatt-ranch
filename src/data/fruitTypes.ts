@@ -139,25 +139,17 @@ export const fruitTypes: FruitType[] = [
   },
   {
     id: 5,
-    type: "asian_pears",
-    title: "Asian Pears",
-    description: "Crisp, sweet pears with apple-like texture and refreshing flavor",
+    type: "other_fruit",
+    title: "Other Fruit",
+    description: "A selection of other delicious fruits available at our ranch.",
     varieties: [
       {
         id: 12,
-        name: "Hosui",
-        description: "Premium Asian pear variety with exceptional sweetness and crisp texture",
+        name: "Asian Pears",
+        description: "Crisp, sweet pears with apple-like texture and refreshing flavor.",
         season: "Late August",
         image: "/images/fruit/hosui.jpg",
         featured: true
-      },
-      {
-        id: 13,
-        name: "Shinseiki",
-        description: "Golden Asian pear with refreshing taste and excellent keeping quality",
-        season: "Late August",
-        image: "/images/fruit/shinseiki.jpg",
-        featured: false
       }
     ]
   }

@@ -132,7 +132,7 @@ const Visit = () => {
               
               <div className="space-y-4 text-gray-700">
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     1
                   </div>
                   <div>
@@ -141,7 +141,7 @@ const Visit = () => {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     2
                   </div>
                   <div>
@@ -150,7 +150,7 @@ const Visit = () => {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     3
                   </div>
                   <div>
@@ -159,7 +159,7 @@ const Visit = () => {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     4
                   </div>
                   <div>

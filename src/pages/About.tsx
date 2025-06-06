@@ -69,17 +69,6 @@ const About = () => {
           <p className="text-gray-700 mb-4 leading-relaxed">
             We believe U-Pick farms are places where families create lasting memories. Our U-Pick experience allows visitors to connect with locally grown products fresh from the tree and enjoy the simple pleasure of personally harvesting each hand-picked fruit that is perfectly tree-ripened. If U-Pick isn’t for you, you can visit us for fruit handpicked every morning to purchase direct from our barn. We’re proud to be part of the agricultural heritage of Brentwood and to share our passion with our community, friends, and families. Experience the difference of tree-ripened fruit and create memories that will last a lifetime. Come taste what makes Moffatt Peaches truly special.
           </p>
-          <div className="my-8 flex justify-center">
-            {/* Video Placeholder: Replace with actual video component or iframe if available */}
-            <video
-              src="/lovable-uploads/mt-diablo-video-placeholder.mp4"
-              controls
-              className="rounded-lg shadow-lg max-w-full md:max-w-lg"
-              poster="/lovable-uploads/mt-diablo-poster-placeholder.png" // Optional: add a poster image
-            >
-              Your browser does not support the video tag.
-            </video>
-          </div>
         </div>
       </section>
     </div>
