@@ -95,7 +95,7 @@ const Navbar = () => {
 
             {/* Mobile menu drawer */}
             <div
-              className={`fixed top-0 right-0 h-full w-64 bg-sage-light bg-opacity-100 shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
+              className={`fixed top-0 right-0 h-full w-64 bg-primary-green bg-opacity-100 shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
                 isMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
@@ -103,7 +103,7 @@ const Navbar = () => {
                 <div className="flex justify-end">
                   <button
                     onClick={closeMenu}
-                    className="text-gray-500 hover:text-gray-800"
+                    className="text-white hover:text-gray-800"
                     aria-label="Close menu"
                   >
                     <svg
@@ -131,8 +131,8 @@ const Navbar = () => {
                           to={item.href}
                           className={`block py-2 ${
                             location.pathname === item.href
-                              ? "text-olive font-medium"
-                              : "text-gray-800 hover:text-olive"
+                              ? "text-secondary-green font-medium"
+                              : "text-white hover:text-olive"
                           }`}
                           onClick={closeMenu}
                         >
