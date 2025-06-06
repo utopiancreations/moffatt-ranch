@@ -61,12 +61,7 @@ const Contact = () => {
                     Hours of Operation
                   </h3>
                   <div className="text-gray-700 ml-8">
-                    <div className="mb-1">
-                      <span className="font-medium">Friday - Sunday:</span> 9:00am - 4:00pm
-                    </div>
-                    <div>
-                      <span className="font-medium">Monday - Thursday:</span> Closed
-                    </div>
+                    <p className="mb-1">Open 7 days a week, 8:00am - 4:30pm</p>
                     <p className="text-sm text-ranch-accent mt-2">
                       *Hours may vary depending on fruit availability. Please check our social media for updates.
                     </p>
