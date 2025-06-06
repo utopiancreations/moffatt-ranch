@@ -87,7 +87,7 @@ const Visit = () => {
               </div>
               
               <a 
-                href="https://maps.google.com" 
+                href="https://www.google.com/maps/search/?api=1&query=1870+Walnut+Blvd%2C+Brentwood%2C+CA+94513"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center"

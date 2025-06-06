@@ -238,7 +238,7 @@ const Index = () => {
                 </p>
                 
                 <div className="flex justify-center md:justify-start">
-                  <Link to="/visit" className="btn-primary">Get Directions & More Info</Link>
+                  <a href="https://www.google.com/maps/search/?api=1&query=1870+Walnut+Blvd%2C+Brentwood%2C+CA+94513" className="btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
                 </div>
               </div>
             </div>

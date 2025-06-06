@@ -16,10 +16,12 @@ import Merchandise from "./pages/Merchandise";
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from './components/ScrollToTop'; // New import
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* New component instance */}
       <TooltipProvider>
         <Toaster />
         <Sonner />
