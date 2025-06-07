@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripe Detailed Test</title>
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 5px; overflow: auto; }
+    button { padding: 10px 15px; background: #6772e5; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    .error { color: #e25950; }
+    .success { color: #2dce89; }
+    .panel { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+    .flex { display: flex; gap: 10px; align-items: center; }
+    input[type="text"] { padding: 8px; width: 300px; }
+  </style>
+</head>
+<body>
+  <h1>Stripe Edge Function Detailed Test</h1>
+  
+  <div class="panel">
+    <h2>Configuration</h2>
+    <div class="flex">
+      <label for="supabaseUrl">Supabase URL:</label>
+      <input type="text" id="supabaseUrl" placeholder="https://your-project-ref.supabase.co">
+    </div>
+  </div>
+  
+  <div class="panel">
+    <h2>Function Health Check</h2>
+    <button id="healthCheck">Check Edge Function Health</button>
+    <div id="healthResult"></div>
+  </div>
+  
+  <div class="panel">
+    <h2>Create Checkout Session Test</h2>
+    <div>
+      <h3>Test Payload:</h3>
+      <pre id="testPayload">
+{
+  "order_id": "test-order-123",
+  "cart_items": [
+    {
+      "name": "Test Product",
+      "description": "This is a test product",
+      "amount": 1000,
+      "quantity": 1
+    }
+  ],
+  "shipping_fee": 599,
+  "customer_email": "test@example.com",
+  "success_url": "https://example.com/success",
+  "cancel_url": "https://example.com/cancel"
+}
+      </pre>
+      <button id="editPayload">Edit Payload</button>
+    </div>
+    <button id="createSession">Create Test Checkout Session</button>
+    <div id="sessionResult"></div>
+  </div>
+
+  <script>
+    // Load Supabase URL from localStorage if available
+    document.getElementById('supabaseUrl').value = localStorage.getItem('supabaseUrl') || '';
+    
+    // Default test payload
+    let testPayload = {
+      order_id: "test-order-" + Date.now(),
+      cart_items: [
+        {
+          name: "Test Product",
+          description: "This is a test product",
+          amount: 1000,
+          quantity: 1
+        }
+      ],
+      shipping_fee: 599,
+      customer_email: "test@example.com",
+      success_url: window.location.origin + "/success",
+      cancel_url: window.location.origin + "/cancel"
+    };
+    
+    // Update the payload display
+    document.getElementById('testPayload').textContent = JSON.stringify(testPayload, null, 2);
+    
+    // Edit payload button
+    document.getElementById('editPayload').addEventListener('click', () => {
+      const newPayload = prompt('Edit the test payload (JSON):', JSON.stringify(testPayload, null, 2));
+      if (newPayload) {
+        try {
+          testPayload = JSON.parse(newPayload);
+          document.getElementById('testPayload').textContent = JSON.stringify(testPayload, null, 2);
+        } catch (error) {
+          alert('Invalid JSON: ' + error.message);
+        }
+      }
+    });
+    
+    // Health check button
+    document.getElementById('healthCheck').addEventListener('click', async () => {
+      const resultDiv = document.getElementById('healthResult');
+      const supabaseUrl = document.getElementById('supabaseUrl').value.trim();
+      
+      if (!supabaseUrl) {
+        resultDiv.innerHTML = '<p class="error">Please enter your Supabase URL</p>';
+        return;
+      }
+      
+      // Save URL to localStorage
+      localStorage.setItem('supabaseUrl', supabaseUrl);
+      
+      resultDiv.innerHTML = '<p>Loading...</p>';
+      
+      try {
+        const response = await fetch(`${supabaseUrl}/functions/v1/stripe-debug`);
+        const data = await response.json();
+        
+        resultDiv.innerHTML = `
+          <p class="${response.ok ? 'success' : 'error'}">Status: ${response.status}</p>
+          <pre>${JSON.stringify(data, null, 2)}</pre>
+        `;
+      } catch (error) {
+        resultDiv.innerHTML = `
+          <p class="error">Error: ${error.message}</p>
+        `;
+      }
+    });
+    
+    // Create session button
+    document.getElementById('createSession').addEventListener('click', async () => {
+      const resultDiv = document.getElementById('sessionResult');
+      const supabaseUrl = document.getElementById('supabaseUrl').value.trim();
+      
+      if (!supabaseUrl) {
+        resultDiv.innerHTML = '<p class="error">Please enter your Supabase URL</p>';
+        return;
+      }
+      
+      resultDiv.innerHTML = '<p>Loading...</p>';
+      
+      try {
+        const response = await fetch(`${supabaseUrl}/functions/v1/create-checkout`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(testPayload)
+        });
+        
+        const data = await response.json();
+        
+        resultDiv.innerHTML = `
+          <p class="${response.ok ? 'success' : 'error'}">Status: ${response.status}</p>
+          <pre>${JSON.stringify(data, null, 2)}</pre>
+        `;
+        
+        if (response.ok && data.id) {
+          resultDiv.innerHTML += `
+            <div class="panel success">
+              <h3>Session Created!</h3>
+              <p>Session ID: ${data.id}</p>
+              <button id="openCheckout">Open Stripe Checkout</button>
+            </div>
+          `;
+          
+          document.getElementById('openCheckout').addEventListener('click', () => {
+            window.open(`https://checkout.stripe.com/c/pay/${data.id}`, '_blank');
+          });
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `
+          <p class="error">Error: ${error.message}</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

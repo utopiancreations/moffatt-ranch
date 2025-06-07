@@ -39,9 +39,9 @@ const Merchandise = () => {
           <div className="mt-16 text-center bg-olive-light p-8 rounded-lg">
             <h3 className="text-xl font-medium mb-4 text-olive">Visit Us To Purchase</h3>
             <p className="max-w-2xl mx-auto text-gray-700">
-              All of our merchandise is available for purchase at our ranch location. 
+              All of our merchandise is available for purchase at our ranch location.
               Come visit us during our regular business hours to browse our selection and 
-              enjoy the fresh peach experience!
+              enjoy the fresh peach experience! We accept cash and Venmo for payments!
             </p>
           </div>
         </div>

@@ -101,9 +101,9 @@ const Visit = () => {
             
             <div className="rounded-lg overflow-hidden shadow-lg">
               {/* Placeholder for Google Map - in production this would be an actual Google Maps embed */}
-              <div className="bg-gray-200 w-full h-[400px] flex items-center justify-center">
+              <div className="bg-gray-200 w-full h-[600px] flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/255fb0f5-ecf9-4ed0-a187-f3b2fc38f8d5.png" 
+                  src="/lovable-uploads/visitfarmersmarket.jpg" 
                   alt="Moffatt Ranch location" 
                   className="w-full h-full object-cover"
                 />
@@ -121,7 +121,7 @@ const Visit = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <img 
-                src="/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png" 
+                src="/lovable-uploads/upick.jpg" 
                 alt="Family picking peaches" 
                 className="rounded-lg shadow-lg"
               />

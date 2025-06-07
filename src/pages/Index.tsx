@@ -111,7 +111,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="enhanced-card overflow-hidden">
               <img 
-                src="/lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png"
+                src="/lovable-uploads/yellowpeach.jpg"
                 alt="Fresh peach closeup" 
                 className="w-full h-64 object-cover"
               />
@@ -131,7 +131,7 @@ const Index = () => {
             
             <div className="enhanced-card overflow-hidden">
               <img 
-                src="/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png"
+                src="/lovable-uploads/nectarine.jpg"
                 alt="Fresh nectarines" 
                 className="w-full h-64 object-cover"
               />
@@ -151,7 +151,7 @@ const Index = () => {
             
             <div className="enhanced-card overflow-hidden">
               <img 
-                src="/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png"
+                src="/lovable-uploads/asianpear.jpg"
                 alt="Asian pears" 
                 className="w-full h-64 object-cover object-center"
               />

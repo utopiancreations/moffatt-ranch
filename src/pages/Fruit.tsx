@@ -131,7 +131,7 @@ const Fruit = () => {
             </div>
             <div className="mt-8">
               <Link to="/visit" className="btn-primary">
-                Plan Your Visit & See Hours
+                Visit Us!
               </Link>
             </div>
           </div>

@@ -129,7 +129,7 @@ const Contact = () => {
             
             <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">What forms of payment do you accept?</h3>
-              <p className="text-gray-700">We accept cash and all major credit cards. Currently, we do not accept personal checks.</p>
+              <p className="text-gray-700">We accept cash and Venmo. Currently, we do not accept personal checks.</p>
             </div>
             
             <div className="enhanced-card p-6">

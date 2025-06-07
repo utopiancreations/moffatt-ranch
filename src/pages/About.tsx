@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
        <Hero
-        backgroundVideo="lovable-uploads/video_fx_undefined_2025_05_03_17_23-2.mp4"
+        backgroundVideo="lovable-uploads/bnwslow.mp4"
         backgroundImage="/lovable-uploads/ad98ec17-4140-41d1-bdfe-63c993a8c1e3.png"
         title="Our Story"
         subtitle="A family tradition of growing the finest peaches in Brentwood since 1955"
@@ -54,7 +54,7 @@ const About = () => {
           </p>
           <div className="my-8 flex justify-center">
             <img
-              src="/lovable-uploads/family-photo-placeholder.png"
+              src="/lovable-uploads/kids.png"
               alt="Moffatt family placeholder"
               className="rounded-lg shadow-lg max-w-full md:max-w-lg"
             />
