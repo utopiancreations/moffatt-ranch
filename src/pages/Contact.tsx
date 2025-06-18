@@ -38,8 +38,7 @@ const Contact = () => {
                     </svg>
                     Call Us
                   </h3>
-                  <p className="text-gray-700 ml-8"><a href="tel:+12094830048" className="hover:text-ranch-accent">(209) 483-0048</a></p>
-                  <p className="text-gray-700 ml-8"><a href="tel:+19163371738" className="hover:text-ranch-accent">(916) 337-1738</a></p>
+                  <p className="text-gray-700 ml-8"><a href="tel:+19253840443" className="hover:text-ranch-accent">(925) 384-0443</a></p>
                 </div>
                 
                 <div>

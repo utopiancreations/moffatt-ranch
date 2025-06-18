@@ -111,7 +111,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="enhanced-card overflow-hidden">
               <img 
-                src="/lovable-uploads/yellowpeach.jpg"
+                src="/lovable-uploads/peachy.png"
                 alt="Fresh peach closeup" 
                 className="w-full h-64 object-cover"
               />
@@ -210,8 +210,7 @@ const Index = () => {
                     </svg>
                     Call Us
                   </h4>
-                  <p className="text-gray-700 ml-8"><a href="tel:+12094830048" className="hover:text-ranch-accent">(209) 483-0048</a></p>
-                  <p className="text-gray-700 ml-8"><a href="tel:+19163371738" className="hover:text-ranch-accent">(916) 337-1738</a></p>
+                  <p className="text-gray-700 ml-8"><a href="tel:+19253840443" className="hover:text-ranch-accent">(925) 384-0443</a></p>
                 </div>
 
                 <div>
@@ -231,7 +230,7 @@ const Index = () => {
             <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Current Hours</h3>
               <div className="mb-6">
-                <p className="text-xl text-red-600 font-bold mb-4">Temporarily Closed</p>
+                <p className="text-xl text-red-600 font-bold mb-4">Opening For The Season June 18, 2025!</p>
                 <p className="text-gray-700 mb-2 font-medium">Open 7 days a week, 8:00am - 4:30pm</p>
                 <p className="text-sm mb-6 text-gray-600">
                   *Hours may vary. Please check our social media for the latest updates and U-Pick availability.
