@@ -23,28 +23,45 @@ const Visit = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-peach flex-shrink-0 mt-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
-                  <span>123 Orchard Lane, Brentwood, CA 94513</span>
+                  <span>1870 Walnut Blvd, Brentwood, CA 94513</span>
                 </p>
               </div>
               
               <div className="mb-8">
                 <h3 className="text-xl font-serif font-semibold mb-2">Current Hours</h3>
+                <p className="text-2xl text-red-600 font-bold mb-3">Opening For The Season June 18, 2025!</p>
                 <div className="text-gray-700">
                   <div className="mb-1 flex justify-between">
+                    <span className="font-medium">Monday:</span>
+                    <span>8:00am - 4:30pm</span>
+                  </div>
+                  <div className="mb-1 flex justify-between">
+                    <span className="font-medium">Tuesday:</span>
+                    <span>8:00am - 4:30pm</span>
+                  </div>
+                  <div className="mb-1 flex justify-between">
+                    <span className="font-medium">Wednesday:</span>
+                    <span>8:00am - 4:30pm</span>
+                  </div>
+                  <div className="mb-1 flex justify-between">
+                    <span className="font-medium">Thursday:</span>
+                    <span>8:00am - 4:30pm</span>
+                  </div>
+                  <div className="mb-1 flex justify-between">
                     <span className="font-medium">Friday:</span>
-                    <span>9:00am - 4:00pm</span>
+                    <span>8:00am - 4:30pm</span>
                   </div>
                   <div className="mb-1 flex justify-between">
                     <span className="font-medium">Saturday:</span>
-                    <span>9:00am - 4:00pm</span>
+                    <span>8:00am - 4:30pm</span>
                   </div>
                   <div className="mb-1 flex justify-between">
                     <span className="font-medium">Sunday:</span>
-                    <span>9:00am - 4:00pm</span>
+                    <span>8:00am - 4:30pm</span>
                   </div>
                   <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Monday - Thursday:</span>
-                    <span>Closed</span>
+                    <span className="font-medium">July 4th:</span>
+                    <span>8:00am - 4:30pm</span>
                   </div>
                   <p className="text-sm mt-2 text-peach">
                     *Hours may vary depending on fruit availability and weather conditions. Please check our social media for updates before your visit.
@@ -58,19 +75,19 @@ const Visit = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
-                  <span>(925) 555-1234</span>
+                  <span><a href="tel:+19253840443" className="hover:text-ranch-accent">(925) 384-0443</a></span>
                 </p>
                 <p className="text-gray-700 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span>info@moffattranchpeaches.com</span>
+                  <a href="mailto:moffattranch1870@gmail.com" className="hover:text-ranch-accent">moffattranch1870@gmail.com</a>
                 </p>
               </div>
               
               <a 
-                href="https://maps.google.com" 
+                href="https://www.google.com/maps/search/?api=1&query=1870+Walnut+Blvd%2C+Brentwood%2C+CA+94513"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center"
@@ -84,9 +101,9 @@ const Visit = () => {
             
             <div className="rounded-lg overflow-hidden shadow-lg">
               {/* Placeholder for Google Map - in production this would be an actual Google Maps embed */}
-              <div className="bg-gray-200 w-full h-[400px] flex items-center justify-center">
+              <div className="bg-gray-200 w-full h-[600px] flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/255fb0f5-ecf9-4ed0-a187-f3b2fc38f8d5.png" 
+                  src="/lovable-uploads/visitfarmersmarket.jpg" 
                   alt="Moffatt Ranch location" 
                   className="w-full h-full object-cover"
                 />
@@ -104,7 +121,7 @@ const Visit = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <img 
-                src="/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png" 
+                src="/lovable-uploads/upick.jpg" 
                 alt="Family picking peaches" 
                 className="rounded-lg shadow-lg"
               />
@@ -115,7 +132,7 @@ const Visit = () => {
               
               <div className="space-y-4 text-gray-700">
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     1
                   </div>
                   <div>
@@ -124,7 +141,7 @@ const Visit = () => {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     2
                   </div>
                   <div>
@@ -133,16 +150,16 @@ const Visit = () => {
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     3
                   </div>
                   <div>
-                    <p>Return to the farm stand where we'll weigh your harvest and complete your purchase. Payment is accepted by cash or credit card.</p>
+                    <p>Return to the farm stand where we'll weigh your harvest and complete your purchase. Payment is accepted by cash or Venmo.</p>
                   </div>
                 </div>
                 
                 <div className="flex">
-                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-white flex items-center justify-center mr-3 font-medium">
+                  <div className="flex-shrink-0 h-8 w-8 rounded-full bg-peach text-ranch-dark flex items-center justify-center mr-3 font-medium">
                     4
                   </div>
                   <div>
@@ -153,10 +170,43 @@ const Visit = () => {
               
               <div className="mt-8">
                 <h4 className="text-xl font-serif font-medium mb-2">Pricing</h4>
-                <p className="text-gray-700">Our U-Pick fruit is priced per pound, with rates varying by fruit type. Pre-picked fruit is also available for purchase at our farm stand if you prefer not to pick your own.</p>
+                <p className="text-gray-700">U-Pick: $3.50 per pound.</p>
+                <p className="text-gray-700">Pre-picked: $4.00 per pound.</p>
+                <p className="text-gray-700 mt-2">Pre-picked fruit is also available for purchase at our farm stand if you prefer not to pick your own.</p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Seasonal Availability Section */}
+      <section className="section-padding section-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="heading-medium text-center mb-10">Seasonal Availability</h2>
+          <div className="text-center text-gray-700 leading-relaxed mb-8">
+            <p className="mb-2">When to Visit: Our U-Pick season typically runs from early June through August, depending on weather conditions and fruit ripening schedules.</p>
+            <p className="mb-6">Different varieties ripen at different times, so there's always something delicious to pick throughout the season!</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
+            <div className="bg-sage-light p-6 rounded-lg shadow">
+              <h4 className="text-xl font-semibold text-olive mb-2">Early Season</h4>
+              <p className="text-gray-600">June - Early July</p>
+              <p className="text-gray-700">Early peach and nectarine varieties</p>
+            </div>
+            <div className="bg-sage-light p-6 rounded-lg shadow">
+              <h4 className="text-xl font-semibold text-olive mb-2">Mid Season</h4>
+              <p className="text-gray-600">Mid July</p>
+              <p className="text-gray-700">Peak varieties of peaches and nectarines</p>
+            </div>
+            <div className="bg-sage-light p-6 rounded-lg shadow">
+              <h4 className="text-xl font-semibold text-olive mb-2">Late Season</h4>
+              <p className="text-gray-600">Late July - August</p>
+              <p className="text-gray-700">Late peaches, nectarines, and Asian pears</p>
+            </div>
+          </div>
+          <p className="text-center text-gray-700 mt-4">
+            For current picking availability, please check our social media pages or give us a call before your visit.
+          </p>
         </div>
       </section>
       
@@ -203,8 +253,8 @@ const Visit = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Cash or Card</h3>
-                    <p className="text-gray-700">We accept both cash and credit cards for payment. No minimum purchase required.</p>
+                    <h3 className="text-lg font-medium mb-2 text-ranch-text">Payment</h3>
+                    <p className="text-gray-700">Cash or Venmo for payment.</p>
                   </div>
                 </div>
               </div>
@@ -247,7 +297,7 @@ const Visit = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium mb-2 text-ranch-text">Camera</h3>
-                    <p className="text-gray-700">Capture the fun memories of your day at the orchard! Our scenic farm makes for great photos.</p>
+                    <p className="text-gray-700">Capture the fun memories of your day at the orchard! Our scenic farm makes for great photos. Feel free to share on our Facebook Page!</p>
                   </div>
                 </div>
               </div>
@@ -261,33 +311,20 @@ const Visit = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Amenities */}
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-md">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-6">Ranch Amenities</h3>
-              
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-peach mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Clean restroom facilities</span>
-                </li>
-                <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-peach mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-gray-700">Shaded picnic area for enjoying your fresh fruit</span>
+                  <span className="text-gray-700">Clean sanitation stations</span>
                 </li>
                 <li className="flex items-start">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-peach mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="text-gray-700">Handwashing stations</span>
-                </li>
-                <li className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-peach mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-gray-700">Cold water and drinks available for purchase</span>
                 </li>
                 <li className="flex items-start">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-peach mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
@@ -305,15 +342,14 @@ const Visit = () => {
             </div>
             
             {/* Policies */}
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-md">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-6">Ranch Policies</h3>
-              
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ranch-blue mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Dogs are welcome but must be kept on a leash at all times</span>
+                  <span className="text-gray-700">Dogs are welcome but must be kept on a leash at all times. Please bring what you need to clean up after your dog!</span>
                 </li>
                 <li className="flex items-start">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ranch-blue mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">

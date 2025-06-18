@@ -28,7 +28,7 @@ const Contact = () => {
                     </svg>
                     Visit Our Ranch
                   </h3>
-                  <p className="text-gray-700 ml-8">123 Orchard Lane, Brentwood, CA 94513</p>
+                  <p className="text-gray-700 ml-8">1870 Walnut Blvd, Brentwood, CA 94513</p>
                 </div>
                 
                 <div>
@@ -38,7 +38,7 @@ const Contact = () => {
                     </svg>
                     Call Us
                   </h3>
-                  <p className="text-gray-700 ml-8">(925) 555-1234</p>
+                  <p className="text-gray-700 ml-8"><a href="tel:+19253840443" className="hover:text-ranch-accent">(925) 384-0443</a></p>
                 </div>
                 
                 <div>
@@ -49,7 +49,7 @@ const Contact = () => {
                     </svg>
                     Email Us
                   </h3>
-                  <p className="text-gray-700 ml-8">info@moffattranchpeaches.com</p>
+                  <p className="text-gray-700 ml-8"><a href="mailto:moffattranch1870@gmail.com" className="hover:text-ranch-accent">moffattranch1870@gmail.com</a></p>
                 </div>
                 
                 <div>
@@ -60,12 +60,7 @@ const Contact = () => {
                     Hours of Operation
                   </h3>
                   <div className="text-gray-700 ml-8">
-                    <div className="mb-1">
-                      <span className="font-medium">Friday - Sunday:</span> 9:00am - 4:00pm
-                    </div>
-                    <div>
-                      <span className="font-medium">Monday - Thursday:</span> Closed
-                    </div>
+                    <p className="mb-1">Open 7 days a week, 8:00am - 4:30pm</p>
                     <p className="text-sm text-ranch-accent mt-2">
                       *Hours may vary depending on fruit availability. Please check our social media for updates.
                     </p>
@@ -133,7 +128,7 @@ const Contact = () => {
             
             <div className="enhanced-card p-6">
               <h3 className="text-xl font-serif font-semibold mb-2">What forms of payment do you accept?</h3>
-              <p className="text-gray-700">We accept cash and all major credit cards. Currently, we do not accept personal checks.</p>
+              <p className="text-gray-700">We accept cash and Venmo. Currently, we do not accept personal checks.</p>
             </div>
             
             <div className="enhanced-card p-6">
