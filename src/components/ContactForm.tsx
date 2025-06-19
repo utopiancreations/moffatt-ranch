@@ -4,7 +4,7 @@ const ContactForm = () => {
     <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
       <h3 className="text-2xl font-serif font-semibold mb-6 text-center md:text-left">Send Us a Message</h3>
       
-      <form action="https://formsubmit.co/info@moffattranch.com" method="POST">
+      <form action="https://formsubmit.co/moffattranch1870@gmail.com" method="POST">
         {/* FormSubmit configuration fields */}
         <input type="hidden" name="_subject" value="New message from Moffatt Ranch website" />
         <input type="hidden" name="_captcha" value="false" />
