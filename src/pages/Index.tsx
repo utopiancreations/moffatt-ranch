@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import FeatureCard from "../components/FeatureCard";
 import { Link } from "react-router-dom";
@@ -183,7 +182,7 @@ const Index = () => {
             <div className="bg-sage-light/30 p-6 rounded-lg max-w-3xl mx-auto mb-8">
               <h2 className="heading-medium mb-4 text-ranch-text">Plan Your Visit</h2>
               <p className="text-xl">
-                Join us for a memorable day at the orchard. U-Pick is available seasonally from June through August.
+                <span className="font-bold text-red-600">Closed for the 2025 season, come see us in 2026!</span>
               </p>
             </div>
           </div>
@@ -210,7 +209,7 @@ const Index = () => {
                     </svg>
                     Call Us
                   </h4>
-                  <p className="text-gray-700 ml-8"><a href="tel:+19253840443" className="hover:text-ranch-accent">(925) 384-0443</a></p>
+                  <p className="text-gray-700 ml-8"><a href="tel:+12094830048" className="hover:text-ranch-accent">(209) 483-0048</a></p>
                 </div>
 
                 <div>
@@ -230,10 +229,10 @@ const Index = () => {
             <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Current Hours</h3>
               <div className="mb-6">
-                <p className="text-xl text-red-600 font-bold mb-4">Opening For The Season June 18, 2025!</p>
-                <p className="text-gray-700 mb-2 font-medium">Open 7 days a week, 8:00am - 4:30pm</p>
+                                <p className="text-xl text-red-600 font-bold mb-4">Closed for the 2025 season, come see us in 2026!</p>
+                <p className="text-gray-700 mb-2 font-medium">We are closed for the season. Please check back in 2026 for our next harvest!</p>
                 <p className="text-sm mb-6 text-gray-600">
-                  *Hours may vary. Please check our social media for the latest updates and U-Pick availability.
+                  *Hours and U-Pick availability will be posted in 2026.
                 </p>
                 
                 <div className="flex justify-center md:justify-start">

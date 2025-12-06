@@ -38,7 +38,7 @@ const Contact = () => {
                     </svg>
                     Call Us
                   </h3>
-                  <p className="text-gray-700 ml-8"><a href="tel:+19253840443" className="hover:text-ranch-accent">(925) 384-0443</a></p>
+                  <p className="text-gray-700 ml-8"><a href="tel:+12094830048" className="hover:text-ranch-accent">(209) 483-0048</a></p>
                 </div>
                 
                 <div>
@@ -60,10 +60,8 @@ const Contact = () => {
                     Hours of Operation
                   </h3>
                   <div className="text-gray-700 ml-8">
-                    <p className="mb-1">Open 7 days a week, 8:00am - 4:30pm</p>
-                    <p className="text-sm text-ranch-accent mt-2">
-                      *Hours may vary depending on fruit availability. Please check our social media for updates.
-                    </p>
+                    <p className="mb-1 font-bold text-red-600">Closed for the 2025 season, come see us in 2026!</p>
+                    <p className="text-sm text-ranch-accent mt-2">We are closed for the season. Please check back in 2026 for our next harvest!</p>
                   </div>
                 </div>
                 

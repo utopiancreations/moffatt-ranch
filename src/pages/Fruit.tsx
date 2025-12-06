@@ -1,4 +1,3 @@
-
 import Hero from "@/components/Hero";
 import { FruitTypeCard } from "@/components/FruitTypeCard";
 import { fruitTypes } from "@/data/fruitTypes";
@@ -40,6 +39,15 @@ const Fruit = () => {
               </p>
             </div>
           </div>
+        </div>
+        {/* Add image at the bottom of Farm Fresh Varieties section */}
+        <div className="flex justify-center mt-8">
+          <img 
+            src="/lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png" 
+            alt="Fresh peaches and nectarines at Moffatt Ranch" 
+            className="rounded-lg shadow-lg max-w-full h-auto" 
+            style={{ maxHeight: '350px' }}
+          />
         </div>
       </section>
       
