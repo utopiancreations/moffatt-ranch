@@ -29,44 +29,8 @@ const Visit = () => {
               
               <div className="mb-8">
                 <h3 className="text-xl font-serif font-semibold mb-2">Current Hours</h3>
-                <p className="text-2xl text-red-600 font-bold mb-3">Opening For The Season June 18, 2025!</p>
-                <div className="text-gray-700">
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Monday:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Tuesday:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Wednesday:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Thursday:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Friday:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Saturday:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">Sunday:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <div className="mb-1 flex justify-between">
-                    <span className="font-medium">July 4th:</span>
-                    <span>8:00am - 4:30pm</span>
-                  </div>
-                  <p className="text-sm mt-2 text-peach">
-                    *Hours may vary depending on fruit availability and weather conditions. Please check our social media for updates before your visit.
-                  </p>
-                </div>
+                                <p className="text-2xl text-red-600 font-bold mb-3">Closed for the 2025 season, come see us in 2026!</p>
+                <p className="text-gray-700 font-medium">We are closed for the season. Please check back in 2026 for our next harvest!</p>
               </div>
               
               <div className="mb-8">
@@ -75,7 +39,7 @@ const Visit = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
-                  <span><a href="tel:+19253840443" className="hover:text-ranch-accent">(925) 384-0443</a></span>
+                  <span><a href="tel:+12094830048" className="hover:text-ranch-accent">(209) 483-0048</a></span>
                 </p>
                 <p className="text-gray-700 flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-peach" viewBox="0 0 20 20" fill="currentColor">
@@ -303,6 +267,15 @@ const Visit = () => {
               </div>
             </div>
           </div>
+        </div>
+        {/* Add image at the bottom of What to Bring section */}
+        <div className="flex justify-center mt-8">
+          <img 
+            src="/lovable-uploads/Laurencio.jpg" 
+            alt="Our ranch staff ready to assist you" 
+            className="rounded-lg shadow-lg max-w-full h-auto"
+            style={{ maxHeight: '350px' }}
+          />
         </div>
       </section>
       

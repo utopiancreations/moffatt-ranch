@@ -40,8 +40,8 @@ const Merchandise = () => {
             <h3 className="text-xl font-medium mb-4 text-olive">Visit Us To Purchase</h3>
             <p className="max-w-2xl mx-auto text-gray-700">
               All of our merchandise is available for purchase at our ranch location.
-              Come visit us during our regular business hours to browse our selection and 
-              enjoy the fresh peach experience! We accept cash and Venmo for payments!
+              <span className="font-bold text-red-600 block mt-2">We are currently closed for the 2025 season. Please check back in 2026!</span>
+              We accept cash and Venmo for payments when we're open!
             </p>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 import Hero from "../components/Hero";
 import ContactForm from "../components/ContactForm";
 
