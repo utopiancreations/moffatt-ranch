@@ -8,10 +8,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and About */}
           <div className="flex flex-col items-center md:items-start">
-            <img 
-              src="/lovable-uploads/7a4769d7-643d-4a8f-84fa-4ed084f81d1f.png" 
-              alt="Moffatt Ranch Logo" 
+            <img
+              src="/lovable-uploads/7a4769d7-643d-4a8f-84fa-4ed084f81d1f.webp"
+              alt="Moffatt Ranch Logo"
               className="h-16 mb-4"
+              loading="lazy"
+              decoding="async"
             />
             <p className="text-gray-300 mb-4 text-center md:text-left">
               Family-owned U-Pick peach and nectarine orchard in Brentwood since 1955.
