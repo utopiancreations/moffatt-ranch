@@ -7,9 +7,10 @@ const Index = () => {
     <div>
       {/* Hero Section */}
       <Hero
-        backgroundVideo="https://firebasestorage.googleapis.com/v0/b/joshresumesite.firebasestorage.app/o/video_fx_undefined_2025_05_03_17_23.mp4?alt=media&token=e7978bb6-5840-48f9-80e3-63806c993f9b"
-        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.png"
-        imageOverlay="/lovable-uploads/9e45f4b0-f497-4cc5-8015-3058c909c171.png"
+        backgroundVideo="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized.mp4"
+        posterImage="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized_poster.jpg"
+        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.webp"
+        imageOverlay="/lovable-uploads/9e45f4b0-f497-4cc5-8015-3058c909c171.webp"
         buttonText="Plan Your Visit"
         buttonLink="/visit"
         useUrbandale={true}
@@ -92,10 +93,12 @@ const Index = () => {
             </div>
             
             <div className="order-1 md:order-2">
-              <img 
-                src="/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.png" 
-                alt="Jim and Michele Moffatt with fresh peaches" 
+              <img
+                src="/lovable-uploads/f0641324-2e3f-4a07-a7f1-b28d73a9b280.webp"
+                alt="Jim and Michele Moffatt with fresh peaches"
                 className="rounded-lg shadow-lg h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -109,10 +112,12 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="enhanced-card overflow-hidden">
-              <img 
-                src="/lovable-uploads/peachy.png"
-                alt="Fresh peach closeup" 
+              <img
+                src="/lovable-uploads/peachy.webp"
+                alt="Fresh peach closeup"
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold mb-2">Peaches</h3>
@@ -129,10 +134,12 @@ const Index = () => {
             </div>
             
             <div className="enhanced-card overflow-hidden">
-              <img 
+              <img
                 src="/lovable-uploads/nectarine.jpg"
-                alt="Fresh nectarines" 
+                alt="Fresh nectarines"
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold mb-2">Nectarines</h3>
@@ -149,10 +156,12 @@ const Index = () => {
             </div>
             
             <div className="enhanced-card overflow-hidden">
-              <img 
+              <img
                 src="/lovable-uploads/asianpear.jpg"
-                alt="Asian pears" 
+                alt="Asian pears"
                 className="w-full h-64 object-cover object-center"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-serif font-semibold mb-2">Asian Pears</h3>
@@ -182,7 +191,7 @@ const Index = () => {
             <div className="bg-sage-light/30 p-6 rounded-lg max-w-3xl mx-auto mb-8">
               <h2 className="heading-medium mb-4 text-ranch-text">Plan Your Visit</h2>
               <p className="text-xl">
-                <span className="font-bold text-red-600">Closed for the 2025 season, come see us in 2026!</span>
+                <span className="font-bold text-green-700">We are now open for the 2026 season!</span>
               </p>
             </div>
           </div>
@@ -229,10 +238,9 @@ const Index = () => {
             <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Current Hours</h3>
               <div className="mb-6">
-                                <p className="text-xl text-red-600 font-bold mb-4">Closed for the 2025 season, come see us in 2026!</p>
-                <p className="text-gray-700 mb-2 font-medium">We are closed for the season. Please check back in 2026 for our next harvest!</p>
+                <p className="text-xl text-green-700 font-bold mb-4">We are now open for the 2026 season!</p>
+                <p className="text-gray-700 mb-2 font-medium">Check back here or follow our socials for our opening date.</p>
                 <p className="text-sm mb-6 text-gray-600">
-                  *Hours and U-Pick availability will be posted in 2026.
                 </p>
                 
                 <div className="flex justify-center md:justify-start">

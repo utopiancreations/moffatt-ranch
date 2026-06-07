@@ -7,8 +7,9 @@ const Merchandise = () => {
   return (
     <div>
       <Hero
-        backgroundVideo="/lovable-uploads/video_fx_undefined_2025_05_03_17_23.mp4"
-        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.png"
+        backgroundVideo="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized.mp4"
+        posterImage="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized_poster.jpg"
+        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.webp"
         title="Ranch Merchandise"
         subtitle="Quality ranch products available for purchase at our location"
       />
@@ -40,7 +41,7 @@ const Merchandise = () => {
             <h3 className="text-xl font-medium mb-4 text-olive">Visit Us To Purchase</h3>
             <p className="max-w-2xl mx-auto text-gray-700">
               All of our merchandise is available for purchase at our ranch location.
-              <span className="font-bold text-red-600 block mt-2">We are currently closed for the 2025 season. Please check back in 2026!</span>
+              <span className="font-bold text-green-700 block mt-2">We are now open for the 2026 season! Visit us to get yours.</span>
               We accept cash and Venmo for payments when we're open!
             </p>
           </div>

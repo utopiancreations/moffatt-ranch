@@ -5,8 +5,9 @@ const Visit = () => {
   return (
     <div>
       <Hero
-        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.png"
-         backgroundVideo="https://firebasestorage.googleapis.com/v0/b/joshresumesite.firebasestorage.app/o/video_fx_undefined_2025_05_03_17_23.mp4?alt=media&token=e7978bb6-5840-48f9-80e3-63806c993f9b"
+        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.webp"
+        backgroundVideo="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized.mp4"
+        posterImage="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized_poster.jpg"
         title="Visit Moffatt Ranch"
         subtitle="Join us for a fun U-Pick experience in the beautiful orchards of Brentwood"
       />
@@ -29,8 +30,7 @@ const Visit = () => {
               
               <div className="mb-8">
                 <h3 className="text-xl font-serif font-semibold mb-2">Current Hours</h3>
-                                <p className="text-2xl text-red-600 font-bold mb-3">Closed for the 2025 season, come see us in 2026!</p>
-                <p className="text-gray-700 font-medium">We are closed for the season. Please check back in 2026 for our next harvest!</p>
+                <p className="text-2xl text-green-700 font-bold mb-3">We are now open for the 2026 season!</p>
               </div>
               
               <div className="mb-8">
@@ -66,10 +66,12 @@ const Visit = () => {
             <div className="rounded-lg overflow-hidden shadow-lg">
               {/* Placeholder for Google Map - in production this would be an actual Google Maps embed */}
               <div className="bg-gray-200 w-full h-[600px] flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/visitfarmersmarket.jpg" 
-                  alt="Moffatt Ranch location" 
+                <img
+                  src="/lovable-uploads/visitfarmersmarket.jpg"
+                  alt="Moffatt Ranch location"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -84,10 +86,12 @@ const Visit = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <img 
-                src="/lovable-uploads/upick.jpg" 
-                alt="Family picking peaches" 
+              <img
+                src="/lovable-uploads/upick.webp"
+                alt="Family picking peaches"
                 className="rounded-lg shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             
@@ -270,11 +274,13 @@ const Visit = () => {
         </div>
         {/* Add image at the bottom of What to Bring section */}
         <div className="flex justify-center mt-8">
-          <img 
-            src="/lovable-uploads/Laurencio.jpg" 
-            alt="Our ranch staff ready to assist you" 
+          <img
+            src="/lovable-uploads/Laurencio.jpg"
+            alt="Our ranch staff ready to assist you"
             className="rounded-lg shadow-lg max-w-full h-auto"
             style={{ maxHeight: '350px' }}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>

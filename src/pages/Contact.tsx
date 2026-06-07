@@ -6,8 +6,9 @@ const Contact = () => {
   return (
     <div>
       <Hero
-        backgroundVideo="https://firebasestorage.googleapis.com/v0/b/joshresumesite.firebasestorage.app/o/video_fx_undefined_2025_05_06_14_08.mp4?alt=media&token=fd9727f0-53d7-4935-bd74-800375edc3dc"
-        backgroundImage="/lovable-uploads/ad98ec17-4140-41d1-bdfe-63c993a8c1e3.png"
+        backgroundVideo="/lovable-uploads/video_fx_undefined_2025_05_06_14_08_optimized.mp4"
+        posterImage="/lovable-uploads/video_fx_undefined_2025_05_06_14_08_optimized_poster.jpg"
+        backgroundImage="/lovable-uploads/ad98ec17-4140-41d1-bdfe-63c993a8c1e3.webp"
         title="Contact Us"
         subtitle="We'd love to hear from you! Get in touch with any questions about our ranch."
       />
@@ -60,8 +61,7 @@ const Contact = () => {
                     Hours of Operation
                   </h3>
                   <div className="text-gray-700 ml-8">
-                    <p className="mb-1 font-bold text-red-600">Closed for the 2025 season, come see us in 2026!</p>
-                    <p className="text-sm text-ranch-accent mt-2">We are closed for the season. Please check back in 2026 for our next harvest!</p>
+                    <p className="mb-1 font-bold text-green-700">We are now open for the 2026 season!</p>
                   </div>
                 </div>
                 

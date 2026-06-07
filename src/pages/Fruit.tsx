@@ -16,8 +16,9 @@ const Fruit = () => {
   return (
     <div>
       <Hero
-        backgroundVideo="/lovable-uploads/video_fx_undefined_2025_05_03_17_23.mp4"
-        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.png"
+        backgroundVideo="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized.mp4"
+        posterImage="/lovable-uploads/video_fx_undefined_2025_05_03_17_23_optimized_poster.jpg"
+        backgroundImage="/lovable-uploads/87ed0cf3-be46-4d35-945a-8b493c437024.webp"
         title="Our Peaches & Nectarines"
         subtitle="Tree-ripened to perfection, available during peak season"
       />
@@ -42,11 +43,13 @@ const Fruit = () => {
         </div>
         {/* Add image at the bottom of Farm Fresh Varieties section */}
         <div className="flex justify-center mt-8">
-          <img 
-            src="/lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.png" 
-            alt="Fresh peaches and nectarines at Moffatt Ranch" 
-            className="rounded-lg shadow-lg max-w-full h-auto" 
+          <img
+            src="/lovable-uploads/2399ad98-c225-4056-8b5d-14fa66f5396b.webp"
+            alt="Fresh peaches and nectarines at Moffatt Ranch"
+            className="rounded-lg shadow-lg max-w-full h-auto"
             style={{ maxHeight: '350px' }}
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>

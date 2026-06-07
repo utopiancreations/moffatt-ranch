@@ -4,9 +4,10 @@ import Hero from "../components/Hero";
 const About = () => {
   return (
     <div>
-       <Hero
-        backgroundVideo="lovable-uploads/cherryblossom.mp4"
-        backgroundImage="/lovable-uploads/cherryblossom.jpg"
+      <Hero
+        backgroundVideo="/lovable-uploads/cherryblossom_optimized.mp4"
+        posterImage="/lovable-uploads/cherryblossom_optimized_poster.jpg"
+        backgroundImage="/lovable-uploads/cherryblossom.webp"
         title="Our Story"
         subtitle="A family tradition of growing the finest peaches in Brentwood since 1955"
       />
@@ -20,9 +21,11 @@ const About = () => {
           </p>
           <div className="my-8 flex justify-center">
             <img
-              src="/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.png"
+              src="/lovable-uploads/509cc7c2-eecb-482d-aac4-35e622e65ab2.webp"
               alt="Walter and Jeanne Moffatt"
               className="rounded-lg shadow-lg max-w-full md:max-w-lg"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -37,9 +40,11 @@ const About = () => {
           </p>
           <div className="my-8 flex justify-center">
             <img
-              src="/lovable-uploads/ad98ec17-4140-41d1-bdfe-63c993a8c1e3.png"
+              src="/lovable-uploads/ad98ec17-4140-41d1-bdfe-63c993a8c1e3.webp"
               alt="Jim and Michele Moffatt"
               className="rounded-lg shadow-lg max-w-full md:max-w-lg"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -54,9 +59,11 @@ const About = () => {
           </p>
           <div className="my-8 flex justify-center">
             <img
-              src="/lovable-uploads/micheleandjim.png"
+              src="/lovable-uploads/micheleandjim.webp"
               alt="Moffatt family placeholder"
               className="rounded-lg shadow-lg max-w-full md:max-w-lg"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
