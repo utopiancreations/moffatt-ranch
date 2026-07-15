@@ -1,73 +1,21 @@
-# Welcome to your Lovable project
+# Moffatt Ranch Platform
 
-## Project info
+E-commerce and logistics platform for a sustainable family orchard — covers the full order lifecycle: browsing, checkout, payment, fulfillment tracking, and seasonal inventory management.
 
-**URL**: https://lovable.dev/projects/f2e75ee1-d139-4256-a6f0-9ff9316b0254
+**Live:** https://moffatt-ranch.vercel.app
 
-## How can I edit this code?
+## What I Built vs. What Was Scaffolded
 
-There are several ways of editing your application.
+The UI shell started from an AI-assisted scaffold (Lovable), which got a working React/Tailwind/shadcn-ui interface in place fast. Everything that actually carries risk, I built and hardened by hand:
 
-**Use Lovable**
+**Payments:** a full Stripe integration as Supabase Edge Functions — create-checkout, stripe-webhook, verify-checkout, plus dedicated stripe-debug and stripe-tracking functions for order-status reconciliation. Webhook signature verification and idempotency are the parts scaffolding tools don't get right; those were hand-built.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f2e75ee1-d139-4256-a6f0-9ff9316b0254) and start prompting.
+**Access control:** a SECURITY DEFINER Postgres function (is_user_admin) backing the admin dashboard's row-level security, so admin-only data stays admin-only at the database layer, not just hidden in the UI.
 
-Changes made via Lovable will be committed automatically to this repo.
+**Production hardening:** fixed SPA route-reload behavior on Vercel, corrected missing WebP assets and unreliable social-share preview images.
 
-**Use your preferred IDE**
+For from-scratch, unscaffolded work, see [ghostwriter](https://github.com/utopiancreations/ghostwriter) (Python/Ollama) or [radical-resolve](https://github.com/utopiancreations/radical-resolve) (Flutter) — neither started from a template.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f2e75ee1-d139-4256-a6f0-9ff9316b0254) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+React, TypeScript, Tailwind CSS, shadcn-ui, Vite, Supabase, Stripe API
