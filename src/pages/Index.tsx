@@ -191,7 +191,7 @@ const Index = () => {
             <div className="bg-sage-light/30 p-6 rounded-lg max-w-3xl mx-auto mb-8">
               <h2 className="heading-medium mb-4 text-ranch-text">Plan Your Visit</h2>
               <p className="text-xl">
-                <span className="font-bold text-green-700">We are now open for the 2026 season!</span>
+                <span className="font-bold text-olive">We are closed for the 2026 season. See you in 2027!</span>
               </p>
             </div>
           </div>
@@ -238,8 +238,8 @@ const Index = () => {
             <div className="bg-cream-card p-8 rounded-lg shadow-md border border-borderLight">
               <h3 className="text-2xl font-serif font-semibold mb-4 text-ranch-text">Current Hours</h3>
               <div className="mb-6">
-                <p className="text-xl text-green-700 font-bold mb-4">We are now open for the 2026 season!</p>
-                <p className="text-gray-700 mb-2 font-medium">Check back here or follow our socials for our opening date.</p>
+                <p className="text-xl text-olive font-bold mb-4">We are closed for the 2026 season. See you in 2027!</p>
+                <p className="text-gray-700 mb-2 font-medium">Check back here or follow our socials for our 2027 opening date.</p>
                 <p className="text-sm mb-6 text-gray-600">
                 </p>
                 

@@ -30,7 +30,7 @@ const Visit = () => {
               
               <div className="mb-8">
                 <h3 className="text-xl font-serif font-semibold mb-2">Current Hours</h3>
-                <p className="text-2xl text-green-700 font-bold mb-3">We are now open for the 2026 season!</p>
+                <p className="text-2xl text-olive font-bold mb-3">We are closed for the 2026 season. See you in 2027!</p>
               </div>
               
               <div className="mb-8">

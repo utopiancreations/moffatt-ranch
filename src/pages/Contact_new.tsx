@@ -60,7 +60,7 @@ const Contact = () => {
                     Hours of Operation
                   </h3>
                   <div className="text-gray-700 ml-8">
-                    <p className="mb-1 font-bold text-green-700">We are now open for the 2026 season!</p>
+                    <p className="mb-1 font-bold text-olive">We are closed for the 2026 season. See you in 2027!</p>
                   </div>
                 </div>
                 

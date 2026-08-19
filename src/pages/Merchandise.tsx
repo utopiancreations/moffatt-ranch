@@ -41,7 +41,7 @@ const Merchandise = () => {
             <h3 className="text-xl font-medium mb-4 text-olive">Visit Us To Purchase</h3>
             <p className="max-w-2xl mx-auto text-gray-700">
               All of our merchandise is available for purchase at our ranch location.
-              <span className="font-bold text-green-700 block mt-2">We are now open for the 2026 season! Visit us to get yours.</span>
+              <span className="font-bold text-olive block mt-2">We are closed for the 2026 season. See you in 2027!</span>
               We accept cash and Venmo for payments when we're open!
             </p>
           </div>
